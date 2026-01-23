@@ -1,0 +1,51 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#main-content"
+    - generic [ref=e5]:
+      - link "Arnav Tiwari" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - button "Toggle navigation menu" [expanded] [active] [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: Open main menu
+        - img [ref=e11]
+    - generic [ref=e15]:
+      - button "About" [ref=e16] [cursor=pointer]
+      - button "Experience" [ref=e17] [cursor=pointer]
+      - button "Projects" [ref=e18] [cursor=pointer]
+      - button "Skills" [ref=e19] [cursor=pointer]
+      - button "Contact" [ref=e20] [cursor=pointer]
+      - link "Download Resume" [ref=e22] [cursor=pointer]:
+        - /url: /resume.pdf
+  - main [ref=e23]:
+    - heading "Portfolio Content" [level=1] [ref=e25]
+  - contentinfo [ref=e26]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - heading "Contact" [level=3] [ref=e30]
+        - generic [ref=e31]:
+          - paragraph [ref=e32]:
+            - link "arnav.tiwari@example.com" [ref=e33] [cursor=pointer]:
+              - /url: mailto:arnav.tiwari@example.com
+          - paragraph [ref=e34]: Nagpur, India
+      - generic [ref=e35]:
+        - heading "Connect" [level=3] [ref=e36]
+        - generic [ref=e37]:
+          - link "LinkedIn" [ref=e38] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e39]
+          - link "GitHub" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e42]
+      - generic [ref=e44]:
+        - heading "Built With" [level=3] [ref=e45]
+        - generic [ref=e46]:
+          - paragraph [ref=e47]:
+            - link "Next.js 14" [ref=e48] [cursor=pointer]:
+              - /url: https://nextjs.org
+          - paragraph [ref=e49]:
+            - link "Tailwind CSS" [ref=e50] [cursor=pointer]:
+              - /url: https://tailwindcss.com
+```
