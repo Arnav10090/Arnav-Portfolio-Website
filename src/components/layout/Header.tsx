@@ -49,30 +49,25 @@ export function Header() {
 
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px',
+      rootMargin: '-100px 0px -66% 0px', // Trigger when section is near top of viewport
       threshold: 0
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // If hero section is visible, clear the active section
-          if (entry.target.id === 'hero') {
-            setActiveSection('');
-          } else {
-            setActiveSection(`#${entry.target.id}`);
-          }
-        }
-      });
+      // Find the most visible section
+      const visibleEntries = entries.filter(entry => entry.isIntersecting);
+      
+      if (visibleEntries.length > 0) {
+        // Sort by intersection ratio and position
+        const mostVisible = visibleEntries.reduce((prev, current) => {
+          return current.intersectionRatio > prev.intersectionRatio ? current : prev;
+        });
+        
+        setActiveSection(`#${mostVisible.target.id}`);
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Also observe the hero section to clear active state
-    const heroElement = document.getElementById('hero');
-    if (heroElement) {
-      observer.observe(heroElement);
-    }
 
     sectionIds.forEach(id => {
       const element = document.getElementById(id);
@@ -81,7 +76,37 @@ export function Header() {
       }
     });
 
-    return () => observer.disconnect();
+    // Fallback: Also track scroll position
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150; // Offset for header height
+
+      for (const item of navigationItems) {
+        const sectionId = item.href.replace('#', '');
+        const element = document.getElementById(sectionId);
+        
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(item.href);
+            break;
+          }
+        }
+      }
+
+      // Clear active section when at the very top
+      if (window.scrollY < 100) {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleSmoothScroll = (href: string) => {
