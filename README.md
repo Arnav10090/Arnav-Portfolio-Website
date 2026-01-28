@@ -44,10 +44,9 @@
 
 ---
 
-<div align="left">
 ## 🏗️ Tech Stack
 
-<div align="center">
+<div align="left">
 
 | Category | Technologies |
 |----------|-------------|
