@@ -44,6 +44,7 @@
 
 ---
 
+<div align="left">
 ## 🏗️ Tech Stack
 
 <div align="center">
@@ -117,20 +118,6 @@ portfolio-website/
 
 ---
 
-## 🎯 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server at `localhost:3000` |
-| `npm run build` | Create optimized production build |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint for code quality |
-| `npm run lint:fix` | Auto-fix ESLint issues |
-| `npm run format` | Format code with Prettier |
-| `npm run type-check` | Run TypeScript type checking |
-
----
-
 ## ⚙️ Environment Variables
 
 Create a `.env.local` file in the root directory:
@@ -151,78 +138,6 @@ NEXT_PUBLIC_VERCEL_ANALYTICS_ID=
 
 ---
 
-## 🌐 Deployment
-
-### Deploy to Vercel (Recommended)
-
-<div align="center">
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-</div>
-
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Configure environment variables
-4. Deploy! 🎉
-
-**Automatic Features:**
-- ✅ CI/CD pipeline
-- ✅ Preview deployments for PRs
-- ✅ Custom domain support
-- ✅ SSL certificates
-- ✅ Global CDN
-
-📖 **Detailed Guide:** See [DEPLOYMENT.md](./DEPLOYMENT.md) for comprehensive deployment instructions.
-
----
-
-## 🎨 Customization
-
-### Update Content
-
-Edit files in `src/data/`:
-- `metadata.ts` - Site metadata & SEO
-- `projects.ts` - Project showcase
-- `experience.ts` - Work experience
-- `skills.ts` - Skills & technologies
-- `contact.ts` - Contact information
-
-### Modify Styling
-
-- **Colors:** Edit `tailwind.config.ts`
-- **Components:** Modify files in `src/components/`
-- **Theme:** Update `src/contexts/ThemeContext.tsx`
-
----
-
-## 📊 Performance
-
-<div align="center">
-
-| Metric | Score |
-|--------|-------|
-| Performance | 🟢 95+ |
-| Accessibility | 🟢 100 |
-| Best Practices | 🟢 100 |
-| SEO | 🟢 100 |
-
-*Lighthouse scores on production build*
-
-</div>
-
----
-
-## 🔒 Security
-
-- ✅ Security headers configured
-- ✅ Input validation & sanitization
-- ✅ Environment variables protection
-- ✅ No sensitive data exposure
-- ✅ HTTPS enforced
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
@@ -235,21 +150,15 @@ Contributions are welcome! Feel free to:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 💬 Contact
 
 Have questions or suggestions? Feel free to reach out!
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Arnav10090)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arnav-tiwari-063278253)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@arnavt292@gmail.com)
 
 </div>
 
@@ -257,8 +166,6 @@ Have questions or suggestions? Feel free to reach out!
 
 <div align="center">
 
-**⭐ Star this repo if you find it helpful!**
-
-Made with ❤️ using Next.js
+Made with ❤️ By Arnav Tiwari
 
 </div>
