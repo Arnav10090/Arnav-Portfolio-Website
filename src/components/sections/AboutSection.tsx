@@ -63,7 +63,7 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       opacity: 1
                     }}
                   >
-                    I'm a <span className="text-primary-500 font-medium highlight-term">Final-year Computer Science</span> undergraduate at <span className="text-primary-500 font-medium highlight-term">IIIT Nagpur</span> who enjoys turning ambiguous requirements into reliable, production-ready systems.
+                    I'm a <span className="text-primary-500 font-medium highlight-term">Software Developer and Final-year Computer Science</span> undergraduate at <span className="text-primary-500 font-medium highlight-term">IIIT Nagpur</span> who enjoys turning ambiguous requirements into reliable, production-ready systems.
                   </p>
 
                   <p
