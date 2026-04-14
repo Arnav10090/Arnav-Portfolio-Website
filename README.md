@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-**A production-ready, high-performance portfolio website built with modern web technologies**
+**A production-ready, high-performance portfolio website for Arnav Tiwari - Full Stack Engineer & AI Builder**
 
 [Live Demo](#) • [Documentation](./DEPLOYMENT.md) • [Report Bug](#) • [Request Feature](#)
 
@@ -27,6 +27,8 @@
 - 🌓 Dark/Light theme support
 - ✨ Smooth animations & transitions
 - 🎯 Modern, clean UI/UX
+- 🎠 Interactive horizontal project slider
+- 🔄 Tabbed skills section (Full Stack & AI/Gen AI)
 
 </td>
 <td width="50%">
@@ -37,6 +39,8 @@
 - 🔒 Enterprise-grade security
 - 📊 Built-in analytics
 - 🌐 SEO optimized
+- 🎨 Custom scrollbar styling
+- ⌨️ Full keyboard navigation support
 
 </td>
 </tr>
