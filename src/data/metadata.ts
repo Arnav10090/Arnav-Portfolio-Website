@@ -6,25 +6,31 @@
 import type { SEOMetadata } from '../lib/types';
 
 export const siteMetadata: SEOMetadata = {
-  title: 'Arnav Tiwari – Software Engineer | Full Stack, AI Systems',
-  description: 'Computer Science Engineering Student skilled in full-stack development, AI-powered applications, and scalable systems. Experienced with React, Next.js, Node.js, and cloud-native tools.',
+  title: 'Arnav Tiwari – Full Stack Engineer & AI Builder | Full Stack, AI Systems',
+  description: 'Final Year Computer Science Engineering student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India. Skilled in multi-agent LLM orchestration, ML pipelines (FAISS, scikit-learn, spaCy), RESTful API design, and React/Next.js frontends backed by PostgreSQL and MongoDB.',
   keywords: [
     'Arnav Tiwari',
     'Software Engineer',
+    'Full Stack Engineer & AI Builder',
     'Full Stack Developer',
     'Next.js Developer',
     'React Developer',
     'Node.js',
     'AI Applications',
+    'AI Systems',
     'LLM Engineering',
+    'Multi-Agent Systems',
+    'FAISS',
+    'scikit-learn',
+    'spaCy',
     'PostgreSQL',
     'MongoDB',
     'TypeScript',
     'IIIT Nagpur',
     'India'
   ],
-  ogTitle: 'Arnav Tiwari – Software Engineer & Full Stack Developer',
-  ogDescription: 'Full Stack & AI-focused software engineer building production-ready systems using modern web technologies and cloud platforms.',
+  ogTitle: 'Arnav Tiwari – Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
+  ogDescription: 'Full Stack Engineer & AI Builder with measurable impact: 54% reduction in hazardous incidents, 80% faster workflows. Specializing in multi-agent LLM systems, ML pipelines, and production-ready full stack applications.',
   ogImage: '/images/og-image.jpg',
   canonicalUrl: 'https://arnavtiwari.dev'
 };
@@ -39,7 +45,7 @@ export const personSchema = {
   name: 'Arnav Tiwari',
   url: 'https://arnavtiwari.dev',
   image: 'https://arnavtiwari.dev/images/og-image.jpg',
-  jobTitle: 'Software Engineer',
+  jobTitle: 'Full Stack Engineer & AI Builder',
   worksFor: {
     '@type': 'Organization',
     name: 'Hitachi',
@@ -56,6 +62,11 @@ export const personSchema = {
     'Node.js',
     'TypeScript',
     'AI Systems',
+    'LLM Engineering',
+    'Multi-Agent Systems',
+    'FAISS',
+    'scikit-learn',
+    'spaCy',
     'PostgreSQL',
     'Full Stack Development',
     'System Design'
@@ -74,7 +85,9 @@ export const personSchema = {
 
 export const personalInfo = {
   name: 'Arnav Tiwari',
-  role: 'Computer Science Engineering Student',
+  role: 'Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
+  status: '✦ Open to Full-Time Software Engineering Roles',
+  description: 'Full Stack Engineer, AI Builder & Final Year CS Student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India and Payatu Security. Skilled in building AI-powered web applications using React/Next.js, Node.js, multi-agent LLM orchestration, and PostgreSQL/MongoDB.',
   location: 'Nagpur, India',
   university: 'Indian Institute of Information Technology Nagpur',
   degree: 'B.Tech in Computer Science Engineering',

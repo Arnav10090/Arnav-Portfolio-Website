@@ -11,14 +11,14 @@ export const experiences: Experience[] = [
     company: 'Hitachi India Pvt Ltd',
     companyUrl: 'https://www.hitachi.com',
     role: 'Software Developer Intern',
-    duration: 'July 2025 - Present',
+    duration: 'Jul 2025 - Present',
     location: 'Nagpur, India',
     description: 'Worked on industrial-grade software systems for power and manufacturing domains.',
     achievements: [
-      'Developed an optimized web application for visualizing Single Line Diagrams (SLD) to improve system analysis efficiency.',
-      'Evaluated real-time system integration using IntervalZero RTX64 RTOS for running Hitachi softwares.',
-      'Developed web based software solutions for Steel processing industries including Digital Permit System, Roll Coolant Tank Monitoring System, Pickling Tank Monitoring System, Truck Turnaround Monitoring System, and Intelligent Coating Quality Improvement System.',
-      'Collaborated with senior engineers to analyze requirements and implement production-grade software solutions.'
+      'Engineered SLD visualization modules for steel plant electrical layouts, enabling real-time anomaly detection of motors — contributing to a 33% reduction in motor failures and 54% reduction in hazardous incidents.',
+      'Ported Hitachi applications to IntervalZero RTX64 RTOS, eliminating Windows OS dependency and enabling deterministic scheduling — improving system efficiency by 43% and reducing task allocation time by 76%.',
+      'Built React + Django interfaces for 5 HICADS systems (DPS, RCTMS, PTMS, TTMS, ICQIS), digitalizing manual equipment pipelines and reducing operator time by 57%.',
+      'Automated CRS document generation pipeline using n8n, cutting turnaround from 2 weeks to 2 days (80% faster) — enabling delivery of 7-10 project documents weekly that previously took a month.'
     ],
     techStack: [
       'C++',
@@ -34,13 +34,13 @@ export const experiences: Experience[] = [
     company: 'Payatu Security Consulting Pvt. Ltd.',
     companyUrl: 'https://payatu.com', // Placeholder
     role: 'Full Stack Developer Intern',
-    duration: 'May 2025 - July 2025',
+    duration: 'May - Jul 2025',
     location: 'Pune, India',
     description: 'Built and optimized full-stack applications for security analytics platforms.',
     achievements: [
-      'Built responsive Next.js + SCSS interfaces, reducing page load time by 25% and improving UI maintainability.',
-      'Developed and optimized MySQL-backed REST APIs, improving backend response time by 40%.',
-      'Implemented 10+ interactive data visualizations to support real-time security analytics and reporting.',
+      'Built responsive Next.js + SCSS interfaces, reducing page load time from 3s → 1.5s (50% faster) and improving UI maintainability.',
+      'Developed 15 REST API endpoints and optimized 8 via indexing, query optimization, and caching on a MySQL-backed Node.js backend — improving response time by 40%.',
+      'Built a real-time logger handling 1,000+ log events/minute for a 4-role RBAC WiFi admin dashboard managing 1,000+ users.',
       'Contributed to production-level code with 90% test coverage, following agile development practices.'
     ],
     techStack: [

@@ -12,9 +12,15 @@ import {
   SiDocker, SiKubernetes,
   SiGit, SiGithubactions, SiPostman,
   SiHtml5, SiCss3, SiJavascript, SiFigma,
-  SiPython, SiCplusplus, SiC
+  SiPython, SiCplusplus, SiC,
+  SiScikitlearn, SiTensorflow, SiPytorch,
+  SiPandas, SiNumpy, SiPlotly,
+  SiGooglecloud, SiFastapi, SiGraphql, SiSocketdotio,
+  SiJsonwebtokens
 } from 'react-icons/si';
-import { FaJava, FaPuzzlePiece, FaUsers, FaBrain, FaCode, FaLock, FaDatabase, FaRobot, FaLightbulb } from 'react-icons/fa';
+import { FaJava, FaPuzzlePiece, FaUsers, FaBrain, FaCode, FaLock, FaDatabase, FaRobot, FaLightbulb, FaChartBar, FaProjectDiagram, FaNetworkWired } from 'react-icons/fa';
+import { TbVectorTriangle, TbBrandOpenai } from 'react-icons/tb';
+import { MdModelTraining, MdDataExploration } from 'react-icons/md';
 
 export const skillCategories: Record<string, Skill[]> = {
   languages: [
@@ -38,7 +44,12 @@ export const skillCategories: Record<string, Skill[]> = {
     { name: 'Express.js', category: 'backend', proficiency: 'advanced', strategic: false, icon: SiExpress },
     { name: 'Django', category: 'backend', proficiency: 'intermediate', strategic: false, icon: SiDjango },
     { name: 'RESTful API Design', category: 'backend', proficiency: 'expert', strategic: false, icon: FaCode },
-    { name: 'Authentication & Authorization', category: 'backend', proficiency: 'advanced', strategic: false, icon: FaLock }
+    { name: 'Authentication & Authorization', category: 'backend', proficiency: 'advanced', strategic: false, icon: FaLock },
+    { name: 'JWT / OAuth 2.0', category: 'backend', proficiency: 'advanced', strategic: false, icon: SiJsonwebtokens },
+    { name: 'GraphQL', category: 'backend', proficiency: 'intermediate', strategic: false, icon: SiGraphql },
+    { name: 'WebSockets', category: 'backend', proficiency: 'intermediate', strategic: false, icon: SiSocketdotio },
+    { name: 'SQLAlchemy', category: 'backend', proficiency: 'intermediate', strategic: false, icon: FaDatabase },
+    { name: 'Drizzle ORM', category: 'backend', proficiency: 'intermediate', strategic: false, icon: FaDatabase }
   ],
   database: [
     { name: 'PostgreSQL', category: 'database', proficiency: 'expert', strategic: true, icon: SiPostgresql },
@@ -60,6 +71,41 @@ export const skillCategories: Record<string, Skill[]> = {
     { name: 'System Thinking', category: 'aiPractices', proficiency: 'expert', strategic: false, icon: FaLightbulb },
     { name: 'Problem Solving', category: 'aiPractices', proficiency: 'expert', strategic: true, icon: FaPuzzlePiece },
     { name: 'Team Collaboration', category: 'aiPractices', proficiency: 'expert', strategic: true, icon: FaUsers }
+  ],
+  machineLearning: [
+    { name: 'scikit-learn', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: SiScikitlearn },
+    { name: 'TensorFlow', category: 'machineLearning', proficiency: 'intermediate', strategic: false, icon: SiTensorflow },
+    { name: 'PyTorch', category: 'machineLearning', proficiency: 'intermediate', strategic: false, icon: SiPytorch },
+    { name: 'FAISS', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: FaDatabase },
+    { name: 'Sentence-Transformers', category: 'machineLearning', proficiency: 'advanced', strategic: false, icon: TbVectorTriangle },
+    { name: 'spaCy', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: FaBrain },
+    { name: 'RAG', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: FaProjectDiagram },
+    { name: 'LLM App Dev', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: TbBrandOpenai },
+    { name: 'Prompt Engineering', category: 'machineLearning', proficiency: 'advanced', strategic: false, icon: FaRobot },
+    { name: 'Multi-agent Orchestration', category: 'machineLearning', proficiency: 'advanced', strategic: true, icon: FaUsers },
+    { name: 'Gemini API', category: 'machineLearning', proficiency: 'advanced', strategic: false, icon: FaBrain },
+    { name: 'Groq SDK', category: 'machineLearning', proficiency: 'intermediate', strategic: false, icon: FaCode }
+  ],
+  dataAnalytics: [
+    { name: 'pandas', category: 'dataAnalytics', proficiency: 'advanced', strategic: true, icon: SiPandas },
+    { name: 'NumPy', category: 'dataAnalytics', proficiency: 'advanced', strategic: false, icon: SiNumpy },
+    { name: 'matplotlib', category: 'dataAnalytics', proficiency: 'intermediate', strategic: false, icon: SiPlotly },
+    { name: 'seaborn', category: 'dataAnalytics', proficiency: 'intermediate', strategic: false, icon: FaChartBar },
+    { name: 'Data preprocessing', category: 'dataAnalytics', proficiency: 'advanced', strategic: false, icon: MdDataExploration },
+    { name: 'Feature extraction', category: 'dataAnalytics', proficiency: 'advanced', strategic: false, icon: FaProjectDiagram },
+    { name: 'NLP', category: 'dataAnalytics', proficiency: 'advanced', strategic: true, icon: FaBrain },
+    { name: 'Model evaluation', category: 'dataAnalytics', proficiency: 'advanced', strategic: false, icon: MdModelTraining },
+    { name: 'Hyperparameter tuning', category: 'dataAnalytics', proficiency: 'intermediate', strategic: false, icon: FaCode }
+  ],
+  devopsAI: [
+    { name: 'GCP / Vertex AI', category: 'devopsAI', proficiency: 'intermediate', strategic: true, icon: SiGooglecloud },
+    { name: 'n8n (workflow automation)', category: 'devopsAI', proficiency: 'advanced', strategic: false, icon: FaProjectDiagram },
+    { name: 'Docker', category: 'devopsAI', proficiency: 'advanced', strategic: true, icon: SiDocker }
+  ],
+  backendAI: [
+    { name: 'FastAPI', category: 'backendAI', proficiency: 'advanced', strategic: true, icon: SiFastapi },
+    { name: 'NetworkX', category: 'backendAI', proficiency: 'intermediate', strategic: false, icon: FaNetworkWired },
+    { name: 'JWT / OAuth 2.0', category: 'backendAI', proficiency: 'advanced', strategic: false, icon: SiJsonwebtokens }
   ]
 };
 

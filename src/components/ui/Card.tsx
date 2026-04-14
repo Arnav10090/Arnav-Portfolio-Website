@@ -11,8 +11,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const baseStyles = 'block transition-all duration-300 ease-out border overflow-hidden relative group';
     
     const variants = {
-      base: 'bg-surface-50 border-white/10 rounded-xl shadow-subtle hover:border-accent-blue/30 transition-colors',
-      elevated: 'bg-surface-100 border-white/10 rounded-lg shadow-medium hover:-translate-y-1 hover:shadow-floating hover:border-accent-blue/30 transition-all', 
+      base: 'bg-surface-50 border-black/20 dark:border-white/10 rounded-xl shadow-subtle hover:border-accent-blue/30 transition-colors',
+      elevated: 'bg-surface-100 border-black/20 dark:border-white/10 rounded-lg shadow-medium hover:-translate-y-1 hover:shadow-floating hover:border-accent-blue/30 transition-all', 
       // Glassmorphism variant with backdrop blur
       glass: 'bg-surface-glass backdrop-blur-xl border-white/10 rounded-lg shadow-soft supports-[backdrop-filter]:bg-surface-glass supports-[backdrop-filter]:backdrop-blur-xl'
     };

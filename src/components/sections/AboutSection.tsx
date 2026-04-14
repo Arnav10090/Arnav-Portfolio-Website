@@ -63,7 +63,7 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       opacity: 1
                     }}
                   >
-                    I'm a <span className="text-primary-500 font-medium highlight-term">Software Developer and Final-year Computer Science</span> undergraduate at <span className="text-primary-500 font-medium highlight-term">IIIT Nagpur</span> who enjoys turning ambiguous requirements into reliable, production-ready systems.
+                    I'm a <span className="text-primary-500 font-medium highlight-term">Full Stack Engineer & AI Builder</span> and final-year <span className="text-primary-500 font-medium highlight-term">Computer Science undergraduate at IIIT Nagpur</span> who turns ambiguous requirements into reliable, production-ready systems — with numbers to prove it.
                   </p>
 
                   <p
@@ -74,7 +74,7 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       opacity: 1
                     }}
                   >
-                    I've built and deployed <span className="text-primary-500 font-medium highlight-term">full-stack</span> and <span className="text-primary-500 font-medium highlight-term">LLM-powered SaaS applications</span>, including <span className="text-primary-500 font-medium highlight-term">multi-agent AI platforms</span> that generate execution-ready outputs from high-level inputs. My experience spans frontend architecture, backend APIs, database design, and AI workflow orchestration.
+                    At <span className="text-primary-500 font-medium highlight-term">Hitachi India</span>, I engineered SLD visualization modules and React + Django interfaces for 5 HICADS systems, contributing to a <span className="text-primary-500 font-medium highlight-term">54% reduction in hazardous incidents</span> and <span className="text-primary-500 font-medium highlight-term">80% faster document turnaround</span>. At <span className="text-primary-500 font-medium highlight-term">Payatu Security</span>, I shipped Next.js interfaces and optimized MySQL-backed APIs, cutting page load times from 3s &rarr; 1.5s (<span className="text-primary-500 font-medium highlight-term">50% faster</span>) and improving backend response by <span className="text-primary-500 font-medium highlight-term">40%</span>.
                   </p>
 
                   <p
@@ -85,7 +85,7 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       opacity: 1
                     }}
                   >
-                    I primarily work with <span className="text-primary-500 font-medium highlight-term">React</span>, <span className="text-primary-500 font-medium highlight-term">Next.js</span>, <span className="text-primary-500 font-medium highlight-term">Node.js</span>, <span className="text-primary-500 font-medium highlight-term">Django</span> and <span className="text-primary-500 font-medium highlight-term">MySQL</span> databases and care deeply about system design, performance, and long-term maintainability over quick hacks.
+                    On the AI/ML side, I've built <span className="text-primary-500 font-medium highlight-term">multi-agent LLM orchestration systems</span> and ML pipelines using <span className="text-primary-500 font-medium highlight-term">scikit-learn</span>, <span className="text-primary-500 font-medium highlight-term">FAISS</span>, <span className="text-primary-500 font-medium highlight-term">spaCy</span>, and <span className="text-primary-500 font-medium highlight-term">Sentence-Transformers</span> — including a skill-gap analyzer trained on 2,484 resumes that achieves <span className="text-primary-500 font-medium highlight-term">F1 &gt; 0.82</span> on skill extraction.
                   </p>
 
                   <p
@@ -96,7 +96,18 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       opacity: 1
                     }}
                   >
-                    Heading into <span className="text-primary-500 font-medium highlight-term">placement season 2026</span>, I'm seeking software engineering roles where engineering quality matters, problems are complex, and ownership is encouraged.
+                    I primarily work with <span className="text-primary-500 font-medium highlight-term">React</span>, <span className="text-primary-500 font-medium highlight-term">Next.js</span>, <span className="text-primary-500 font-medium highlight-term">Node.js</span>, <span className="text-primary-500 font-medium highlight-term">Django</span>, <span className="text-primary-500 font-medium highlight-term">FastAPI</span> and <span className="text-primary-500 font-medium highlight-term">PostgreSQL / MongoDB</span>, and care deeply about system design, performance, and long-term maintainability over quick hacks.
+                  </p>
+
+                  <p
+                    className="text-base sm:text-[17px] text-black dark:text-white highlighted-text lg:animate-fade-up"
+                    style={{
+                      lineHeight: 1.8,
+                      animationDelay: '500ms',
+                      opacity: 1
+                    }}
+                  >
+                    Heading into <span className="text-primary-500 font-medium highlight-term">placement season 2026</span>, I'm looking for software engineering roles where engineering quality matters, problems are complex, and ownership is encouraged.
                   </p>
                 </div>
               </div>

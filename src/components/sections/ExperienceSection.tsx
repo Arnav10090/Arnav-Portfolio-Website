@@ -69,6 +69,7 @@ export function ExperienceSection() {
                         <p className="text-primary-600 dark:text-primary-400 font-medium mt-1">{job.company}</p>
                       </div>
                       <div className="text-left md:text-right">
+                        <p className="text-sm text-text-secondary">{job.duration}</p>
                         <p className="text-sm text-text-secondary mt-1">{job.location}</p>
                       </div>
                     </div>

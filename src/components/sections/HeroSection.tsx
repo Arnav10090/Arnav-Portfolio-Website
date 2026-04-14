@@ -165,6 +165,7 @@ export function HeroSection() {
               >
                 {personalInfo.role}
               </p>
+              {/* Status badge */}
               <p
                 className="text-lg sm:text-xl md:text-xl text-blue-600 dark:text-blue-400 font-bold"
                 style={{
@@ -173,7 +174,7 @@ export function HeroSection() {
                   letterSpacing: '0.5px'
                 }}
               >
-                Open to Full-Time Software Engineering Roles
+                {personalInfo.status}
               </p>
             </div>
 
@@ -186,7 +187,7 @@ export function HeroSection() {
                   opacity: 0.8
                 }}
               >
-                Final Year Computer Science Engineering Student at <span className="text-gray-900 dark:text-white font-medium" style={{ opacity: 1 }}>IIIT Nagpur</span> and AI Enabled Full Stack Developer who is interested in building scalable, production-grade applications.
+                {personalInfo.description}
               </p>
             </div>
 

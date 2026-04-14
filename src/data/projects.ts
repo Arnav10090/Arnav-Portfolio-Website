@@ -7,6 +7,29 @@ import type { Project } from '../lib/types';
 
 export const projects: Project[] = [
   {
+    id: 'skillbridge-ai-onboarding',
+    title: 'SkillBridge - AI Adaptive Onboarding Engine',
+    description: 'An AI-driven platform that compares resumes against job descriptions, identifies precise skill gaps, and generates personalized, dependency-aware learning roadmaps.',
+    problem: 'Traditional onboarding is one-size-fits-all, while manually mapping candidate skills to role requirements is slow, inconsistent, and weak at handling partial matches and prerequisite dependencies.',
+    solution: 'Built a React + FastAPI system that ingests PDF/DOCX/TXT resumes and job descriptions, uses LLM-assisted skill extraction with alias-based fallback, performs 3-layer gap analysis using exact matching, skill-family mapping, and semantic similarity, and generates prioritized learning paths through a custom WGT scoring engine with interactive DAG visualization.',
+    outcome: 'Delivered an end-to-end product with async background analysis, live progress tracking, readiness scoring, reasoning traces, and curated learning recommendations. Grounded the engine in a 71-skill taxonomy, 43 prerequisite links, 58 curated modules, and data-driven weighting derived from 2,484 resumes and 2,277 job descriptions.',
+    techStack: [
+      'React',
+      'Vite',
+      'FastAPI',
+      'Python',
+      'SQLite',
+      'Sentence-Transformers',
+      'Ollama/OpenAI',
+      'React Flow',
+      'Docker'
+    ],
+    featured: true,
+    imageUrl: '/images/projects/skillbridge logo.png',
+    githubUrl: 'https://github.com/Arnav10090/SkillBridge',
+    liveUrl: 'https://drive.google.com/drive/folders/1LjLLtnDewEqzZFRbJHt7Jd9RcFqlIcmZ?usp=sharing'
+  },
+  {
     id: 'autopilot-ai-project-planner',
     title: 'Autopilot – AI Powered Project Planning Platform',
     description: 'An AI-driven platform that converts high-level ideas into detailed, execution-ready project plans.',
