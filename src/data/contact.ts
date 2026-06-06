@@ -9,7 +9,8 @@ export const contactInfo = {
   email: 'arnavt292@gmail.com',
   phone: '+91 83298 46328',
   location: 'Nagpur, India',
-  availability: 'Available for full-time software engineering roles starting July 2026.'
+  availability:
+    'Available for full-time software engineering roles starting July 2026.',
 };
 
 export const socialLinks: NavigationItem[] = [
@@ -17,58 +18,58 @@ export const socialLinks: NavigationItem[] = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/arnav-tiwari-063278253/',
     external: true,
-    icon: 'linkedin'
+    icon: 'linkedin',
   },
   {
     label: 'GitHub',
     href: 'https://github.com/Arnav10090',
     external: true,
-    icon: 'github'
+    icon: 'github',
   },
   {
     label: 'Email',
     href: 'mailto:arnavt292@gmail.com',
     external: true,
-    icon: 'email'
+    icon: 'email',
   },
   {
     label: 'Twitter',
     href: 'https://x.com/Arnav_IIITN',
     external: true,
-    icon: 'twitter'
-  }
+    icon: 'twitter',
+  },
 ];
 
 export const navigationItems: NavigationItem[] = [
   {
     label: 'About',
-    href: '#about'
+    href: '#about',
   },
   {
     label: 'Skills',
-    href: '#skills'
+    href: '#skills',
   },
   {
     label: 'Experience',
-    href: '#experience'
+    href: '#experience',
   },
   {
     label: 'Projects',
-    href: '#projects'
+    href: '#projects',
   },
   {
     label: 'Resume',
-    href: '#resume'
+    href: '#resume',
   },
   {
     label: 'Contact',
-    href: '#contact'
-  }
+    href: '#contact',
+  },
 ];
 
 export const resumeDownload = {
   filename: 'Arnav_Tiwari_Resume.pdf',
   url: '/resume/Arnav_Tiwari_Resume.pdf',
   lastUpdated: '2024-12-15',
-  size: '245 KB'
+  size: '245 KB',
 };

@@ -22,6 +22,7 @@
 <td width="50%">
 
 ### 🎨 **Design & UX**
+
 - ⚡ Lightning-fast performance
 - 📱 Fully responsive design
 - 🌓 Dark/Light theme support
@@ -34,6 +35,7 @@
 <td width="50%">
 
 ### 🛠️ **Technical Excellence**
+
 - ♿ WCAG 2.1 AA accessibility
 - 🚀 Optimized Core Web Vitals
 - 🔒 Enterprise-grade security
@@ -52,16 +54,16 @@
 
 <div align="left">
 
-| Category | Technologies |
-|----------|-------------|
-| **Framework** | Next.js 16 (App Router) |
-| **Language** | TypeScript 5 |
-| **Styling** | Tailwind CSS 4 |
-| **UI Library** | React 19 |
-| **Icons** | React Icons |
-| **Analytics** | Vercel Analytics & Speed Insights |
-| **Deployment** | Vercel |
-| **Email** | Formspree Integration |
+| Category       | Technologies                      |
+| -------------- | --------------------------------- |
+| **Framework**  | Next.js 16 (App Router)           |
+| **Language**   | TypeScript 5                      |
+| **Styling**    | Tailwind CSS 4                    |
+| **UI Library** | React 19                          |
+| **Icons**      | React Icons                       |
+| **Analytics**  | Vercel Analytics & Speed Insights |
+| **Deployment** | Vercel                            |
+| **Email**      | Formspree Integration             |
 
 </div>
 

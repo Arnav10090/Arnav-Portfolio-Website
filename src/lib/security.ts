@@ -51,7 +51,7 @@ export function isSensitiveKey(key: string): boolean {
     /private/i,
   ];
 
-  return sensitivePatterns.some((pattern) => pattern.test(key));
+  return sensitivePatterns.some(pattern => pattern.test(key));
 }
 
 /**

@@ -7,7 +7,7 @@
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  
+
   --color-primary-50: var(--primary-50);
   --color-primary-100: var(--primary-100);
   --color-primary-500: var(--primary-500);
@@ -17,7 +17,7 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-border: var(--border);
-  
+
   --font-sans: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono), 'JetBrains Mono', 'Fira Code', monospace;
 
@@ -27,17 +27,41 @@
   --animate-shake: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(12px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
-    20%, 40%, 60%, 80% { transform: translateX(4px); }
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-4px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(4px);
+    }
   }
 }
 
@@ -48,7 +72,7 @@
   --surface: #f8fafc; /* Slate-50 */
   --surface-elevated: #ffffff;
   --border: #e2e8f0; /* Slate-200 */
-  
+
   --text-primary: #0f172a; /* Slate-900 */
   --text-secondary: #64748b; /* Slate-500 */
 
@@ -63,10 +87,10 @@
 
 .dark {
   /* Dark Mode */
-  --background: #0B1220;
+  --background: #0b1220;
   --surface: #1e293b; /* Slate-800 mostly, or custom dark */
-  --surface-elevated: #1e293b; 
-  --border: rgba(255, 255, 255, 0.1); 
+  --surface-elevated: #1e293b;
+  --border: rgba(255, 255, 255, 0.1);
 
   --text-primary: #ffffff;
   --text-secondary: #94a3b8; /* Slate-400 */
@@ -89,7 +113,12 @@ video {
   }
 
   /* Strict Typography Rules from Constraints */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold tracking-tight text-text-primary;
   }
 
@@ -182,7 +211,7 @@ select:focus-visible {
   html {
     scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -191,7 +220,7 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   /* Disable all scroll animations */
   [data-animate] {
     opacity: 1 !important;
@@ -203,7 +232,9 @@ select:focus-visible {
 /* Scroll animation triggers - elements with data-animate attribute */
 [data-animate] {
   opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   /* Use GPU acceleration for animations */
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -214,35 +245,35 @@ select:focus-visible {
 }
 
 /* Scroll animation variants */
-[data-animate="fade-up"] {
+[data-animate='fade-up'] {
   transform: translateY(30px) translateZ(0);
 }
 
-[data-animate="fade-up"].animate-in {
+[data-animate='fade-up'].animate-in {
   transform: translateY(0) translateZ(0);
 }
 
-[data-animate="fade-left"] {
+[data-animate='fade-left'] {
   transform: translateX(-30px) translateZ(0);
 }
 
-[data-animate="fade-left"].animate-in {
+[data-animate='fade-left'].animate-in {
   transform: translateX(0) translateZ(0);
 }
 
-[data-animate="fade-right"] {
+[data-animate='fade-right'] {
   transform: translateX(30px) translateZ(0);
 }
 
-[data-animate="fade-right"].animate-in {
+[data-animate='fade-right'].animate-in {
   transform: translateX(0) translateZ(0);
 }
 
-[data-animate="scale"] {
+[data-animate='scale'] {
   transform: scale(0.95) translateZ(0);
 }
 
-[data-animate="scale"].animate-in {
+[data-animate='scale'].animate-in {
   transform: scale(1) translateZ(0);
 }
 
@@ -259,8 +290,8 @@ select:focus-visible {
 @media (max-width: 768px) {
   button,
   a,
-  input[type="button"],
-  input[type="submit"] {
+  input[type='button'],
+  input[type='submit'] {
     min-height: 44px;
     min-width: 44px;
   }
@@ -304,7 +335,9 @@ select:focus-visible {
   z-index: 1000;
   opacity: 0;
   transform: translateY(4px);
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -326,7 +359,8 @@ select:focus-visible {
 
 /* Success state animations */
 @keyframes success-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -359,7 +393,7 @@ select:focus-visible {
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     will-change: transform;
   }
-  
+
   .magnetic-item:hover {
     transform: translateZ(0);
   }
@@ -367,7 +401,9 @@ select:focus-visible {
 
 /* Enhanced hover states */
 .hover-lift {
-  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .hover-lift:hover {
@@ -393,7 +429,8 @@ html {
 
 /* Pulse animation for status indicators */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 0 8px currentColor;
   }
@@ -430,7 +467,7 @@ html {
   .hover-lift {
     will-change: transform, opacity;
   }
-  
+
   /* Remove will-change after animation completes */
   [data-animate].animate-in {
     will-change: auto;
@@ -439,7 +476,8 @@ html {
 
 /* Global Decorative Animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   50% {
@@ -448,7 +486,8 @@ html {
 }
 
 @keyframes float-reverse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   50% {
@@ -492,10 +531,10 @@ html {
 
 /* Hide scrollbar for horizontal slider */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }

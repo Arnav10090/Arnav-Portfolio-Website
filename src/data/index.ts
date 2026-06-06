@@ -10,26 +10,26 @@ export { experiences } from './experience';
 export { projects } from './projects';
 
 // Skills data
-export { 
-  skillCategories, 
-  allSkills, 
-  strategicSkills, 
-  skillsByProficiency 
+export {
+  skillCategories,
+  allSkills,
+  strategicSkills,
+  skillsByProficiency,
 } from './skills';
 
 // Metadata and SEO
-export { 
-  siteMetadata, 
-  personalInfo, 
-  socialLinks as metadataSocialLinks 
+export {
+  siteMetadata,
+  personalInfo,
+  socialLinks as metadataSocialLinks,
 } from './metadata';
 
 // Contact information
-export { 
-  contactInfo, 
-  socialLinks, 
-  navigationItems, 
-  resumeDownload 
+export {
+  contactInfo,
+  socialLinks,
+  navigationItems,
+  resumeDownload,
 } from './contact';
 
 // Re-export types for convenience
@@ -43,5 +43,5 @@ export type {
   ContactFormResponse,
   SEOMetadata,
   NavigationItem,
-  ThemeConfig
+  ThemeConfig,
 } from '../lib/types';

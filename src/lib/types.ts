@@ -67,9 +67,30 @@ export interface Skill {
   /** Skill name */
   name: string;
   /** Skill category for organization */
-  category: 'languages' | 'frontend' | 'backend' | 'database' | 'devops' | 'aiPractices' | 'enterprise' | 'cloud' | 'tools' | 'emerging' | 'softSkills' | 'machineLearning' | 'dataAnalytics' | 'devopsAI' | 'backendAI';
+  category:
+    | 'languages'
+    | 'frontend'
+    | 'backend'
+    | 'database'
+    | 'devops'
+    | 'aiPractices'
+    | 'enterprise'
+    | 'cloud'
+    | 'tools'
+    | 'emerging'
+    | 'softSkills'
+    | 'machineLearning'
+    | 'dataAnalytics'
+    | 'devopsAI'
+    | 'backendAI';
   /** Proficiency level */
-  proficiency: 'expert' | 'proficient' | 'familiar' | 'learning' | 'advanced' | 'intermediate';
+  proficiency:
+    | 'expert'
+    | 'proficient'
+    | 'familiar'
+    | 'learning'
+    | 'advanced'
+    | 'intermediate';
   /** Whether this skill should receive strategic emphasis (.NET MVC, React) */
   strategic: boolean;
   /** Optional icon component */
@@ -96,7 +117,11 @@ export interface ContactFormData {
  */
 export interface AnalyticsEvent {
   /** Event name/type */
-  name: 'resume_download' | 'contact_submit' | 'project_click' | 'external_link';
+  name:
+    | 'resume_download'
+    | 'contact_submit'
+    | 'project_click'
+    | 'external_link';
   /** Optional event properties */
   properties?: Record<string, string | number>;
 }

@@ -12,8 +12,10 @@ export function useScrollAnimation() {
 
   useEffect(() => {
     // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     if (prefersReducedMotion) {
       // Skip animation setup if user prefers reduced motion
       return;
@@ -21,19 +23,20 @@ export function useScrollAnimation() {
 
     // Create intersection observer with 20% threshold
     observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             // Add will-change before animation starts
-            (entry.target as HTMLElement).style.willChange = 'transform, opacity';
-            
+            (entry.target as HTMLElement).style.willChange =
+              'transform, opacity';
+
             entry.target.classList.add('animate-in');
-            
+
             // Remove will-change after animation completes (600ms animation duration)
             setTimeout(() => {
               (entry.target as HTMLElement).style.willChange = 'auto';
             }, 600);
-            
+
             // Unobserve after animation to free resources
             observerRef.current?.unobserve(entry.target);
           }
@@ -47,7 +50,7 @@ export function useScrollAnimation() {
 
     // Observe all elements with data-animate attribute
     const elements = document.querySelectorAll('[data-animate]');
-    elements.forEach((el) => observerRef.current?.observe(el));
+    elements.forEach(el => observerRef.current?.observe(el));
 
     return () => {
       observerRef.current?.disconnect();
@@ -74,13 +77,13 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null;
-  
+
   return function executedFunction(...args: Parameters<T>) {
     const later = () => {
       timeout = null;
       func(...args);
     };
-    
+
     if (timeout) {
       clearTimeout(timeout);
     }
@@ -98,7 +101,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean = false;
-  
+
   return function executedFunction(...args: Parameters<T>) {
     if (!inThrottle) {
       func(...args);

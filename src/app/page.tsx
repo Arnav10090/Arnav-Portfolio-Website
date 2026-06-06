@@ -7,40 +7,82 @@ import { projects } from '@/data/projects';
 
 // Lazy load below-the-fold sections for better initial load performance
 // ssr: false prevents hydration mismatches from browser extensions
-const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const AboutSection = dynamic(
+  () =>
+    import('@/components/sections/AboutSection').then(mod => ({
+      default: mod.AboutSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const SkillsSection = dynamic(() => import('@/components/sections/SkillsSection').then(mod => ({ default: mod.SkillsSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const SkillsSection = dynamic(
+  () =>
+    import('@/components/sections/SkillsSection').then(mod => ({
+      default: mod.SkillsSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const ExperienceSection = dynamic(() => import('@/components/sections/ExperienceSection').then(mod => ({ default: mod.ExperienceSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const ExperienceSection = dynamic(
+  () =>
+    import('@/components/sections/ExperienceSection').then(mod => ({
+      default: mod.ExperienceSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const ProjectsSection = dynamic(() => import('@/components/sections/ProjectsSection').then(mod => ({ default: mod.ProjectsSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const ProjectsSection = dynamic(
+  () =>
+    import('@/components/sections/ProjectsSection').then(mod => ({
+      default: mod.ProjectsSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const ResumeSection = dynamic(() => import('@/components/sections/ResumeSection').then(mod => ({ default: mod.ResumeSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const ResumeSection = dynamic(
+  () =>
+    import('@/components/sections/ResumeSection').then(mod => ({
+      default: mod.ResumeSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const CTASection = dynamic(() => import('@/components/sections/CTASection').then(mod => ({ default: mod.CTASection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const CTASection = dynamic(
+  () =>
+    import('@/components/sections/CTASection').then(mod => ({
+      default: mod.CTASection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
-const ContactSection = dynamic(() => import('@/components/sections/ContactSection').then(mod => ({ default: mod.ContactSection })), {
-  loading: () => <div className="min-h-screen" />,
-  ssr: false,
-});
+const ContactSection = dynamic(
+  () =>
+    import('@/components/sections/ContactSection').then(mod => ({
+      default: mod.ContactSection,
+    })),
+  {
+    loading: () => <div className="min-h-screen" />,
+    ssr: false,
+  }
+);
 
 export default function Home() {
   // Get featured project images for preloading
@@ -52,7 +94,7 @@ export default function Home() {
   return (
     <ClientLayout>
       {/* Preload critical images for LCP optimization */}
-      {featuredImages.map((imageUrl) => (
+      {featuredImages.map(imageUrl => (
         <link
           key={imageUrl}
           rel="preload"
@@ -63,7 +105,7 @@ export default function Home() {
           imageSizes="(max-width: 768px) 100vw, 50vw"
         />
       ))}
-      
+
       <main id="main-content" role="main">
         <HeroSection />
         <AboutSection id="about" />

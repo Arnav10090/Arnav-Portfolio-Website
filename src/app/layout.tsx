@@ -33,13 +33,15 @@ export const metadata: Metadata = {
     siteName: 'Arnav Tiwari Portfolio',
     title: siteMetadata.ogTitle,
     description: siteMetadata.ogDescription,
-    ...(siteMetadata.ogImage && { 
-      images: [{
-        url: siteMetadata.ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'Arnav Tiwari - Software Engineer Portfolio'
-      }] 
+    ...(siteMetadata.ogImage && {
+      images: [
+        {
+          url: siteMetadata.ogImage,
+          width: 1200,
+          height: 630,
+          alt: 'Arnav Tiwari - Software Engineer Portfolio',
+        },
+      ],
     }),
   },
   twitter: {
@@ -76,7 +78,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Prevent flash of unstyled content */}
         <script
@@ -92,13 +98,13 @@ export default function RootLayout({
             `,
           }}
         />
-        
+
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-        
+
         {/* Structured Data (JSON-LD) for Person Schema */}
         <Script
           id="person-schema"
@@ -109,7 +115,9 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-gray-300 selection:bg-primary-500/30 selection:text-primary-200`}>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-gray-300 selection:bg-primary-500/30 selection:text-primary-200`}
+      >
         {children}
         <Analytics />
         <SpeedInsights />

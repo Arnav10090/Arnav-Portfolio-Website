@@ -6,8 +6,10 @@
 import type { SEOMetadata } from '../lib/types';
 
 export const siteMetadata: SEOMetadata = {
-  title: 'Arnav Tiwari – Full Stack Engineer & AI Builder | Full Stack, AI Systems',
-  description: 'Final Year Computer Science Engineering student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India. Skilled in multi-agent LLM orchestration, ML pipelines (FAISS, scikit-learn, spaCy), RESTful API design, and React/Next.js frontends backed by PostgreSQL and MongoDB.',
+  title:
+    'Arnav Tiwari – Full Stack Engineer & AI Builder | Full Stack, AI Systems',
+  description:
+    'Final Year Computer Science Engineering student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India. Skilled in multi-agent LLM orchestration, ML pipelines (FAISS, scikit-learn, spaCy), RESTful API design, and React/Next.js frontends backed by PostgreSQL and MongoDB.',
   keywords: [
     'Arnav Tiwari',
     'Software Engineer',
@@ -27,12 +29,14 @@ export const siteMetadata: SEOMetadata = {
     'MongoDB',
     'TypeScript',
     'IIIT Nagpur',
-    'India'
+    'India',
   ],
-  ogTitle: 'Arnav Tiwari – Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
-  ogDescription: 'Full Stack Engineer & AI Builder with measurable impact: 54% reduction in hazardous incidents, 80% faster workflows. Specializing in multi-agent LLM systems, ML pipelines, and production-ready full stack applications.',
+  ogTitle:
+    'Arnav Tiwari – Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
+  ogDescription:
+    'Full Stack Engineer & AI Builder with measurable impact: 54% reduction in hazardous incidents, 80% faster workflows. Specializing in multi-agent LLM systems, ML pipelines, and production-ready full stack applications.',
   ogImage: '/images/og-image.jpg',
-  canonicalUrl: 'https://arnavtiwari.dev'
+  canonicalUrl: 'https://arnavtiwari.dev',
 };
 
 /**
@@ -49,12 +53,12 @@ export const personSchema = {
   worksFor: {
     '@type': 'Organization',
     name: 'Hitachi',
-    url: 'https://www.hitachi.com'
+    url: 'https://www.hitachi.com',
   },
   alumniOf: {
     '@type': 'EducationalOrganization',
     name: 'Indian Institute of Information Technology Nagpur',
-    url: 'https://iiitn.ac.in'
+    url: 'https://iiitn.ac.in',
   },
   knowsAbout: [
     'React',
@@ -69,25 +73,26 @@ export const personSchema = {
     'spaCy',
     'PostgreSQL',
     'Full Stack Development',
-    'System Design'
+    'System Design',
   ],
   sameAs: [
     'https://linkedin.com/in/arnavtiwari',
     'https://github.com/arnavtiwari',
-    'https://twitter.com/arnavtiwari'
+    'https://twitter.com/arnavtiwari',
   ],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Nagpur',
-    addressCountry: 'IN'
-  }
+    addressCountry: 'IN',
+  },
 };
 
 export const personalInfo = {
   name: 'Arnav Tiwari',
   role: 'Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
   status: '✦ Open to Full-Time Software Engineering Roles',
-  description: 'Full Stack Engineer, AI Builder & Final Year CS Student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India and Payatu Security. Skilled in building AI-powered web applications using React/Next.js, Node.js, multi-agent LLM orchestration, and PostgreSQL/MongoDB.',
+  description:
+    'Full Stack Engineer, AI Builder & Final Year CS Student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India and Payatu Security. Skilled in building AI-powered web applications using React/Next.js, Node.js, multi-agent LLM orchestration, and PostgreSQL/MongoDB.',
   location: 'Nagpur, India',
   university: 'Indian Institute of Information Technology Nagpur',
   degree: 'B.Tech in Computer Science Engineering',
@@ -95,12 +100,12 @@ export const personalInfo = {
   email: 'arnavt292@gmail.com',
   phone: '+91 83298 46328',
   website: 'https://arnavtiwari.dev',
-  resumeUrl: '/resume/Arnav_Tiwari_Resume.pdf'
+  resumeUrl: '/resume/Arnav_Tiwari_Resume.pdf',
 };
 
 export const socialLinks = {
   linkedin: 'https://linkedin.com/in/arnavtiwari',
   github: 'https://github.com/arnavtiwari',
   twitter: 'https://twitter.com/arnavtiwari',
-  email: 'mailto:arnavt292@gmail.com'
+  email: 'mailto:arnavt292@gmail.com',
 };

@@ -8,21 +8,21 @@ import { ContactFormData } from './validation';
 
 /**
  * Escapes HTML special characters to prevent XSS attacks in email content
- * 
+ *
  * This function is critical for security as it prevents malicious users from
  * injecting HTML/JavaScript into emails. All user-provided content must be
  * escaped before being included in the email HTML.
- * 
+ *
  * Converts the following characters to their HTML entity equivalents:
  * - & → &amp;   (must be first to avoid double-escaping)
  * - < → &lt;    (prevents opening HTML tags)
  * - > → &gt;    (prevents closing HTML tags)
  * - " → &quot;  (prevents breaking out of attributes)
  * - ' → &#39;   (prevents breaking out of attributes)
- * 
+ *
  * @param text - The text to escape
  * @returns HTML-safe escaped text
- * 
+ *
  * @example
  * escapeHtml('<script>alert("xss")</script>')
  * // Returns: '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;'
@@ -33,32 +33,32 @@ function escapeHtml(text: string): string {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#39;'
+    "'": '&#39;',
   };
-  
-  return text.replace(/[&<>"']/g, (char) => htmlEscapeMap[char]);
+
+  return text.replace(/[&<>"']/g, char => htmlEscapeMap[char]);
 }
 
 /**
  * Generates HTML email content from contact form data
- * 
+ *
  * This function creates a professional, well-formatted HTML email that includes
  * all the visitor's information in a clear, readable format. The email is designed
  * to be compatible with all major email clients.
- * 
+ *
  * Security: All user input is escaped using escapeHtml() to prevent XSS attacks.
  * This is critical because email clients may render HTML, and malicious users
  * could attempt to inject scripts or malicious HTML.
- * 
+ *
  * Requirement 1.2: Email includes visitor's name, email address, and message content
  * Requirement 7.2: Email includes visitor's name as a distinct field
  * Requirement 7.3: Email includes visitor's email address as a distinct field
  * Requirement 7.4: Email includes full message content
  * Requirement 7.5: Use HTML formatting to improve readability
- * 
+ *
  * @param data - The contact form data containing name, email, and message
  * @returns HTML-formatted email content with escaped user input
- * 
+ *
  * @example
  * const email = generateEmailHTML({
  *   name: 'John Doe',
@@ -72,7 +72,7 @@ export function generateEmailHTML(data: ContactFormData): string {
   const safeName = escapeHtml(data.name);
   const safeEmail = escapeHtml(data.email);
   const safeMessage = escapeHtml(data.message);
-  
+
   return `
 <!DOCTYPE html>
 <html lang="en">

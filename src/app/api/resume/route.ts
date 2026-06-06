@@ -10,11 +10,16 @@ import { resumeDownload } from '@/data/contact';
 export async function GET(request: NextRequest) {
   try {
     // Get the resume file path
-    const resumePath = join(process.cwd(), 'public', 'resume', resumeDownload.filename);
-    
+    const resumePath = join(
+      process.cwd(),
+      'public',
+      'resume',
+      resumeDownload.filename
+    );
+
     // Read the PDF file
     const pdfBuffer = await readFile(resumePath);
-    
+
     // Create response with proper headers
     const response = new NextResponse(pdfBuffer, {
       status: 200,
@@ -30,11 +35,8 @@ export async function GET(request: NextRequest) {
     return response;
   } catch (error) {
     console.error('Error serving resume:', error);
-    
-    return NextResponse.json(
-      { error: 'Resume not found' },
-      { status: 404 }
-    );
+
+    return NextResponse.json({ error: 'Resume not found' }, { status: 404 });
   }
 }
 
@@ -43,9 +45,14 @@ export async function GET(request: NextRequest) {
  */
 export async function HEAD(request: NextRequest) {
   try {
-    const resumePath = join(process.cwd(), 'public', 'resume', resumeDownload.filename);
+    const resumePath = join(
+      process.cwd(),
+      'public',
+      'resume',
+      resumeDownload.filename
+    );
     const pdfBuffer = await readFile(resumePath);
-    
+
     return new NextResponse(null, {
       status: 200,
       headers: {

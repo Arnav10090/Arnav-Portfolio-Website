@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     // Define responsive breakpoints
     screens: {
-      'sm': '640px',   // Mobile breakpoint (0-640px default)
-      'md': '768px',   // Tablet breakpoint (641-1024px range)
-      'lg': '1024px',  // Desktop breakpoint (1025-1440px range)
-      'xl': '1440px',  // Large desktop breakpoint (1441px+)
+      sm: '640px', // Mobile breakpoint (0-640px default)
+      md: '768px', // Tablet breakpoint (641-1024px range)
+      lg: '1024px', // Desktop breakpoint (1025-1440px range)
+      xl: '1440px', // Large desktop breakpoint (1441px+)
       '2xl': '1536px',
     },
     extend: {
@@ -34,24 +34,26 @@ const config: Config = {
         '40': '10rem', // 160px
         '18': '4.5rem',
         '88': '22rem',
-        'section': '6rem', // 96px
+        section: '6rem', // 96px
       },
       // Border radius scale
       borderRadius: {
-        'none': '0',
-        'sm': '0.375rem', // 6px
-        'DEFAULT': '0.75rem', // 12px
-        'md': '0.75rem', // 12px
-        'lg': '1rem', // 16px
-        'xl': '1.5rem', // 24px
-        'full': '9999px',
+        none: '0',
+        sm: '0.375rem', // 6px
+        DEFAULT: '0.75rem', // 12px
+        md: '0.75rem', // 12px
+        lg: '1rem', // 16px
+        xl: '1.5rem', // 24px
+        full: '9999px',
       },
       // Shadow scale (4 levels)
       boxShadow: {
-        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'medium': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        'floating': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        subtle: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        soft: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        medium:
+          '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        floating:
+          '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       },
       // Color palette with background gradients and accent colors
       colors: {
@@ -110,17 +112,23 @@ const config: Config = {
       },
       // Typography system (72px display to 12px tiny)
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: [
+          'var(--font-inter)',
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
         mono: ['var(--font-mono)', 'JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
-        'tiny': ['0.75rem', { lineHeight: '1rem' }], // 12px
-        'xs': ['0.875rem', { lineHeight: '1.25rem' }], // 14px
-        'sm': ['0.9375rem', { lineHeight: '1.5rem' }], // 15px
-        'base': ['1rem', { lineHeight: '1.75rem' }], // 16px
-        'md': ['1.0625rem', { lineHeight: '1.75rem' }], // 17px
-        'lg': ['1.125rem', { lineHeight: '1.7' }], // 18px
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }], // 20px
+        tiny: ['0.75rem', { lineHeight: '1rem' }], // 12px
+        xs: ['0.875rem', { lineHeight: '1.25rem' }], // 14px
+        sm: ['0.9375rem', { lineHeight: '1.5rem' }], // 15px
+        base: ['1rem', { lineHeight: '1.75rem' }], // 16px
+        md: ['1.0625rem', { lineHeight: '1.75rem' }], // 17px
+        lg: ['1.125rem', { lineHeight: '1.7' }], // 18px
+        xl: ['1.25rem', { lineHeight: '1.75rem' }], // 20px
         '2xl': ['1.5rem', { lineHeight: '2rem' }], // 24px
         '3xl': ['1.75rem', { lineHeight: '2.25rem' }], // 28px
         '4xl': ['2rem', { lineHeight: '2.5rem' }], // 32px
@@ -129,18 +137,18 @@ const config: Config = {
         '7xl': ['4.5rem', { lineHeight: '1' }], // 72px - Display
       },
       letterSpacing: {
-        'tighter': '-0.05em', // -2px at 72px
-        'tight': '-0.025em',
-        'normal': '0',
-        'wide': '0.025em',
-        'wider': '0.05em',
-        'widest': '0.1em',
+        tighter: '-0.05em', // -2px at 72px
+        tight: '-0.025em',
+        normal: '0',
+        wide: '0.025em',
+        wider: '0.05em',
+        widest: '0.1em',
       },
       // Animation timing functions
       transitionTimingFunction: {
         'ease-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
-        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       // Animation duration scale
       transitionDuration: {
@@ -156,8 +164,10 @@ const config: Config = {
       animation: {
         'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
         'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'slide-in-left': 'slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'slide-in-right': 'slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slide-in-left':
+          'slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slide-in-right':
+          'slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'scale-in': 'scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
