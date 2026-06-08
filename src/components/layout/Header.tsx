@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
@@ -53,19 +53,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
+  const activeSectionRef = useRef('');
+  const isScrolledRef = useRef(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Track active section using IntersectionObserver
   useEffect(() => {
     const sectionIds = navigationItems.map(item => item.href.replace('#', ''));
+    let frameId = 0;
 
     const observerOptions = {
       root: null,
@@ -85,7 +78,11 @@ export function Header() {
             : prev;
         });
 
-        setActiveSection(`#${mostVisible.target.id}`);
+        const nextActiveSection = `#${mostVisible.target.id}`;
+        if (activeSectionRef.current !== nextActiveSection) {
+          activeSectionRef.current = nextActiveSection;
+          setActiveSection(nextActiveSection);
+        }
       }
     };
 
@@ -101,39 +98,45 @@ export function Header() {
       }
     });
 
-    // Fallback: Also track scroll position
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150; // Offset for header height
+      if (frameId) return;
 
-      for (const item of navigationItems) {
-        const sectionId = item.href.replace('#', '');
-        const element = document.getElementById(sectionId);
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
 
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(item.href);
-            break;
-          }
+        const nextIsScrolled = window.scrollY > 10;
+        if (isScrolledRef.current !== nextIsScrolled) {
+          isScrolledRef.current = nextIsScrolled;
+          setIsScrolled(nextIsScrolled);
         }
-      }
 
-      // Clear active section when at the very top
-      if (window.scrollY < 100) {
-        setActiveSection('');
-      }
+        if (window.scrollY < 100 && activeSectionRef.current !== '') {
+          activeSectionRef.current = '';
+          setActiveSection('');
+        }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleResize = () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+        frameId = 0;
+      }
+      handleScroll();
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
     handleScroll(); // Initial check
 
     return () => {
       observer.disconnect();
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -148,30 +151,14 @@ export function Header() {
     }
   };
 
-  const handleResumeDownload = async () => {
-    try {
-      const response = await fetch('/api/resume');
-      if (!response.ok) throw new Error('Failed to download resume');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = resumeDownload.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      trackResumeDownload('header');
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      const link = document.createElement('a');
-      link.href = resumeDownload.url;
-      link.download = resumeDownload.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      trackResumeDownload('header');
-    }
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = resumeDownload.url;
+    link.download = resumeDownload.filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    trackResumeDownload('header');
   };
 
   return (
@@ -184,7 +171,7 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-white/20 dark:border-white/10'
+          ? 'bg-white/95 dark:bg-gray-900/95 border-white/20 dark:border-white/10'
           : 'bg-transparent border-transparent'
       )}
       role="banner"

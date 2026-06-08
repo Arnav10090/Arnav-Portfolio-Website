@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { resumeDownload } from '@/data/contact';
 import { trackResumeDownload } from '@/lib/analytics';
-import { useScrollAnimation } from '@/lib/useScrollAnimation';
 import { DecorativeBackground } from '@/components/ui/DecorativeBackground';
 
 /**
@@ -14,33 +13,15 @@ import { DecorativeBackground } from '@/components/ui/DecorativeBackground';
  */
 export function ResumeSection({ id }: { id?: string }) {
   const shouldReduce = useReducedMotion();
-  // Initialize scroll animations (kept if used by inner elements, though mostly moved to framer motion)
-  useScrollAnimation();
 
   const handleResumeDownload = async () => {
-    try {
-      const response = await fetch('/api/resume');
-      if (!response.ok) throw new Error('Failed to download resume');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = resumeDownload.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      trackResumeDownload('resume_section');
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      const link = document.createElement('a');
-      link.href = resumeDownload.url;
-      link.download = resumeDownload.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      trackResumeDownload('resume_section');
-    }
+    const link = document.createElement('a');
+    link.href = resumeDownload.url;
+    link.download = resumeDownload.filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    trackResumeDownload('resume_section');
   };
 
   const [formattedDate, setFormattedDate] = React.useState<string>('');

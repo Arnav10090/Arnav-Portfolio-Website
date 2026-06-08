@@ -4,7 +4,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { trackResumeDownload } from '@/lib/analytics';
-import { personalInfo } from '@/data/metadata';
+import { resumeDownload } from '@/data/contact';
 import { fadeUpVariant } from '@/lib/animation-variants';
 
 export function CTASection() {
@@ -18,35 +18,13 @@ export function CTASection() {
   };
 
   const downloadResume = async () => {
-    try {
-      const response = await fetch('/api/resume');
-
-      if (!response.ok) {
-        throw new Error('Failed to download resume');
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Arnav_Tiwari_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      window.URL.revokeObjectURL(url);
-
-      trackResumeDownload('cta_section');
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      const link = document.createElement('a');
-      link.href = personalInfo.resumeUrl;
-      link.download = 'Arnav_Tiwari_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+    const link = document.createElement('a');
+    link.href = resumeDownload.url;
+    link.download = resumeDownload.filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    trackResumeDownload('cta_section');
   };
 
   return (

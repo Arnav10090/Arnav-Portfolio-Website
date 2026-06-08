@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { throttle } from '@/lib/useScrollAnimation';
 import { cn } from '@/lib/utils';
 
 interface DecorativeBackgroundProps {
@@ -16,44 +15,7 @@ export function DecorativeBackground({
   className,
   variant = 'default',
 }: DecorativeBackgroundProps) {
-  const visualRef = useRef<HTMLDivElement>(null);
   const shouldReduce = useReducedMotion();
-
-  useEffect(() => {
-    const handleScroll = throttle(() => {
-      if (!visualRef.current || shouldReduce) return;
-
-      const scrolled = window.scrollY;
-      const section = visualRef.current.closest('section');
-      if (!section) return;
-
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const viewHeight = window.innerHeight;
-
-      // Only animate when section is in view
-      if (
-        scrolled + viewHeight > sectionTop &&
-        scrolled < sectionTop + sectionHeight
-      ) {
-        const parallaxOffset = (scrolled - sectionTop) * 0.15; // Milder parallax
-        visualRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-      }
-    }, 16);
-
-    if (visualRef.current && !shouldReduce) {
-      visualRef.current.style.willChange = 'transform';
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (visualRef.current) {
-        visualRef.current.style.willChange = 'auto';
-      }
-    };
-  }, [shouldReduce]);
 
   // Define positions based on variant
   const shapePositions =
@@ -84,67 +46,44 @@ export function DecorativeBackground({
       )}
       aria-hidden="true"
     >
-      <div ref={visualRef} className="sticky top-24 w-full h-[600px]">
-        {/* Animated gradient mesh background */}
-        <div className="absolute inset-0 overflow-hidden rounded-xl md:rounded-2xl opacity-40">
-          <div className="gradient-mesh absolute inset-0">
-            <div className="absolute w-[300px] h-[300px] rounded-full mix-blend-screen bg-[radial-gradient(circle,rgba(59,130,246,0.3)_0%,transparent_70%)] animate-float top-[10%] left-[10%]" />
-            <div className="absolute w-[250px] h-[250px] rounded-full mix-blend-screen bg-[radial-gradient(circle,rgba(168,85,247,0.3)_0%,transparent_70%)] animate-float-reverse bottom-[20%] right-[10%]" />
-            <div className="absolute w-[200px] h-[200px] rounded-full mix-blend-screen bg-[radial-gradient(circle,rgba(59,130,246,0.2)_0%,transparent_70%)] animate-float top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2" />
-          </div>
+      <div className="sticky top-24 w-full h-[600px]">
+        {/* Static gradient background to keep scroll rendering light */}
+        <div className="absolute inset-0 overflow-hidden rounded-xl md:rounded-2xl opacity-35">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.18),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_50%)]" />
+          <div className="absolute top-[12%] left-[12%] h-36 w-36 rounded-full bg-blue-500/10" />
+          <div className="absolute bottom-[18%] right-[10%] h-28 w-28 rounded-full bg-purple-500/10" />
+          <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/10" />
         </div>
 
-        {/* Geometric shapes with heavy color grading */}
+        {/* Lighter geometric shapes */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="relative w-full h-full max-w-md"
-            style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
-          >
-            {/* Rotating square - Heavy Blue */}
+          <div className="relative h-full w-full max-w-md">
             <motion.div
-              animate={
-                shouldReduce
-                  ? {}
-                  : {
-                      rotateX: [0, 180, 360],
-                      rotateY: [0, 180, 360],
-                      scale: [1, 1.1, 1],
-                    }
-              }
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              animate={shouldReduce ? {} : { y: [-6, 6, -6], rotate: [0, 4, 0] }}
+              transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
               className={cn(
-                'absolute w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 border-[6px] border-blue-600/60 dark:border-blue-400/60 rounded-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] backdrop-blur-[2px]',
+                'absolute h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-xl border-4 border-blue-500/35',
                 shapePositions.square
               )}
-            ></motion.div>
+            />
 
-            {/* Pulsing circle - Heavy Purple */}
             <motion.div
-              animate={
-                shouldReduce
-                  ? {}
-                  : { rotateX: [0, 180, 360], y: [-15, 15, -15] }
-              }
-              transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+              animate={shouldReduce ? {} : { y: [8, -8, 8] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
               className={cn(
-                'absolute w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 border-[6px] border-purple-600/60 dark:border-purple-400/60 rounded-full shadow-[0_0_30px_rgba(147,51,234,0.3)] backdrop-blur-[2px]',
+                'absolute h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 rounded-full border-4 border-purple-500/35',
                 shapePositions.circle
               )}
-            ></motion.div>
+            />
 
-            {/* Static triangle - Heavy Indigo */}
             <motion.div
-              animate={
-                shouldReduce
-                  ? {}
-                  : { rotateY: [0, 180, 360], x: [-15, 15, -15] }
-              }
-              transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+              animate={shouldReduce ? {} : { x: [-6, 6, -6] }}
+              transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
               className={cn(
-                'absolute w-0 h-0 border-l-[30px] md:border-l-[35px] lg:border-l-[40px] border-l-transparent border-r-[30px] md:border-r-[35px] lg:border-r-[40px] border-r-transparent border-b-[50px] md:border-b-[60px] lg:border-b-[70px] border-b-indigo-600/50 dark:border-b-indigo-400/50 filter drop-shadow-[0_0_15px_rgba(79,70,229,0.3)]',
+                'absolute h-0 w-0 border-l-[30px] md:border-l-[35px] lg:border-l-[40px] border-l-transparent border-r-[30px] md:border-r-[35px] lg:border-r-[40px] border-r-transparent border-b-[50px] md:border-b-[60px] lg:border-b-[70px] border-b-indigo-500/30',
                 shapePositions.triangle
               )}
-            ></motion.div>
+            />
           </div>
         </div>
       </div>

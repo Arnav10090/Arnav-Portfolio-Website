@@ -1,18 +1,16 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { personalInfo } from '@/data/metadata';
+import { resumeDownload } from '@/data/contact';
 import { trackResumeDownload } from '@/lib/analytics';
-import { throttle } from '@/lib/useScrollAnimation';
 
 export function HeroSection() {
   const shouldReduce = useReducedMotion();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const profileCardRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
 
   const scrollToWork = () => {
     const workSection = document.getElementById('experience');
@@ -22,31 +20,18 @@ export function HeroSection() {
   };
 
   const downloadResume = async () => {
-    try {
-      const response = await fetch('/api/resume');
-      if (!response.ok) throw new Error('Failed to download resume');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Arnav_Tiwari_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      trackResumeDownload('hero_section');
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      const link = document.createElement('a');
-      link.href = personalInfo.resumeUrl;
-      link.download = 'Arnav_Tiwari_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+    const link = document.createElement('a');
+    link.href = resumeDownload.url;
+    link.download = resumeDownload.filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    trackResumeDownload('hero_section');
   };
 
   useEffect(() => {
+    let frameId = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!profileCardRef.current || shouldReduce) return;
 
@@ -61,11 +46,25 @@ export function HeroSection() {
       const rotateX = ((y - centerY) / centerY) * -6; // max 6deg
       const rotateY = ((x - centerX) / centerX) * 6; // max 6deg
 
-      setMousePosition({ x: rotateY, y: rotateX });
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        if (!profileCardRef.current) return;
+        profileCardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
     };
 
     const handleMouseLeave = () => {
-      setMousePosition({ x: 0, y: 0 });
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+        frameId = 0;
+      }
+      if (profileCardRef.current) {
+        profileCardRef.current.style.transform =
+          'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      }
     };
 
     const card = profileCardRef.current;
@@ -74,45 +73,19 @@ export function HeroSection() {
       card.addEventListener('mouseleave', handleMouseLeave);
 
       return () => {
+        if (frameId) {
+          window.cancelAnimationFrame(frameId);
+        }
         card.removeEventListener('mousemove', handleMouseMove);
         card.removeEventListener('mouseleave', handleMouseLeave);
       };
     }
   }, [shouldReduce]);
 
-  useEffect(() => {
-    const handleScroll = throttle(() => {
-      if (!heroRef.current || shouldReduce) return;
-
-      if (window.innerWidth < 1024) {
-        heroRef.current.style.transform = 'translateY(0)';
-        return;
-      }
-
-      const scrolled = window.scrollY;
-      const parallaxSpeed = 0.5;
-
-      heroRef.current.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    }, 16);
-
-    if (heroRef.current) {
-      heroRef.current.style.willChange = 'transform';
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (heroRef.current) {
-        heroRef.current.style.willChange = 'auto';
-      }
-    };
-  }, [shouldReduce]);
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-[120px] pb-20 sm:pb-24 md:pb-28 lg:pb-[40px] bg-gradient-to-b from-blue-50 to-white dark:from-[#0a0e1a] dark:to-[#1a1f2e]"
+      className="relative min-h-screen flex items-start overflow-x-hidden pt-32 sm:pt-36 md:pt-40 lg:pt-[170px] pb-20 sm:pb-24 md:pb-28 lg:pb-[56px] bg-gradient-to-b from-blue-50 to-white dark:from-[#0a0e1a] dark:to-[#1a1f2e]"
       aria-label="Hero section"
     >
       <motion.div
@@ -123,10 +96,7 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div
-        ref={heroRef}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Left Column */}
           <div
@@ -279,7 +249,7 @@ export function HeroSection() {
                 ref={profileCardRef}
                 className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] transition-transform duration-300 ease-out"
                 style={{
-                  transform: `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`,
+                  transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
                   transformStyle: 'preserve-3d',
                   willChange: 'transform',
                 }}
