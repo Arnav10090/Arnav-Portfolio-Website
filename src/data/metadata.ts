@@ -7,34 +7,31 @@ import type { SEOMetadata } from '../lib/types';
 
 export const siteMetadata: SEOMetadata = {
   title:
-    'Arnav Tiwari – Full Stack Engineer & AI Builder | Full Stack, AI Systems',
+    'Arnav Tiwari – Software Engineer | AI Products & Automation Systems',
   description:
-    'Final Year Computer Science Engineering student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India. Skilled in multi-agent LLM orchestration, ML pipelines (FAISS, scikit-learn, spaCy), RESTful API design, and React/Next.js frontends backed by PostgreSQL and MongoDB.',
+    'Software Engineer specializing in building AI-powered products, automation workflows, and scalable web applications. Proven track record of reducing hazardous incidents and accelerating document processing through practical engineering and product-focused thinking.',
   keywords: [
     'Arnav Tiwari',
     'Software Engineer',
-    'Full Stack Engineer & AI Builder',
-    'Full Stack Developer',
+    'AI Automation',
+    'Product Engineering',
+    'Generative AI',
+    'Workflow Automation',
+    'Full Stack Engineer',
     'Next.js Developer',
     'React Developer',
     'Node.js',
-    'AI Applications',
     'AI Systems',
     'LLM Engineering',
     'Multi-Agent Systems',
-    'FAISS',
-    'scikit-learn',
-    'spaCy',
-    'PostgreSQL',
-    'MongoDB',
     'TypeScript',
+    'System Design',
     'IIIT Nagpur',
-    'India',
   ],
   ogTitle:
-    'Arnav Tiwari – Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
+    'Arnav Tiwari – Software Engineer Building AI Products & Automation Systems',
   ogDescription:
-    'Full Stack Engineer & AI Builder with measurable impact: 54% reduction in hazardous incidents, 80% faster workflows. Specializing in multi-agent LLM systems, ML pipelines, and production-ready full stack applications.',
+    'Software Engineer and SDE Intern at Hitachi India focused on building AI-powered products, automation workflows, and scalable web applications.',
   ogImage: '/images/og-image.jpg',
   canonicalUrl: 'https://arnavtiwari.dev',
 };
@@ -49,7 +46,7 @@ export const personSchema = {
   name: 'Arnav Tiwari',
   url: 'https://arnavtiwari.dev',
   image: 'https://arnavtiwari.dev/images/og-image.jpg',
-  jobTitle: 'Full Stack Engineer & AI Builder',
+  jobTitle: 'Software Engineer',
   worksFor: {
     '@type': 'Organization',
     name: 'Hitachi',
@@ -89,10 +86,10 @@ export const personSchema = {
 
 export const personalInfo = {
   name: 'Arnav Tiwari',
-  role: 'Full Stack Engineer, AI Builder & CS Student at IIIT Nagpur',
-  status: '✦ Open to Full-Time Software Engineering Roles',
+  role: 'Software Engineer Building AI Products and Automation Systems',
+  status: 'I build scalable software, AI-powered workflows, and automation systems that solve real operational problems.',
   description:
-    'Full Stack Engineer, AI Builder & Final Year CS Student at IIIT Nagpur. Delivered 54% reduction in hazardous incidents and 80% faster document workflows at Hitachi India and Payatu Security. Skilled in building AI-powered web applications using React/Next.js, Node.js, multi-agent LLM orchestration, and PostgreSQL/MongoDB.',
+    'Software Engineer and SDE Intern at Hitachi India focused on building AI-powered products, automation workflows, and scalable web applications. My work has reduced hazardous incidents by 54%, accelerated document processing by 80%, and improved operational efficiency through workflow automation and real-time monitoring systems. I enjoy solving complex business problems through practical engineering, AI systems, and product-focused thinking.',
   location: 'Nagpur, India',
   university: 'Indian Institute of Information Technology Nagpur',
   degree: 'B.Tech in Computer Science Engineering',
