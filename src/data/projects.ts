@@ -35,7 +35,7 @@ export const projects: Project[] = [
   },
   {
     id: 'autopilot-ai-project-planner',
-    title: 'Autopilot — AI-Powered Project Planning Platform',
+    title: 'Autopilot - AI Powered Project Planning Platform',
     description:
       'Autopilot converts high-level ideas into execution-ready project plans.',
     problem:
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ai-content-generator',
-    title: 'AI‑Powered Content Generation Platform',
+    title: 'ContentForge AI - AI Content Generation SaaS',
     description:
       'A secure, multi-tenant content generation service driven by LLMs with prompt templates, editorial controls, and generation pipelines.',
     problem:
@@ -78,12 +78,12 @@ export const projects: Project[] = [
     ],
     featured: true,
     imageUrl: '/images/projects/ai-content-pic.webp',
-    githubUrl: 'https://github.com/Arnav10090/Ai-content-generator',
-    liveUrl: 'https://ai-content-generator-3reg.vercel.app/',
+    githubUrl: 'https://github.com/Arnav10090/ContentForge-AI',
+    liveUrl: 'https://contentforgeapp.vercel.app/',
   },
   {
     id: 'book-store-platform',
-    title: 'BookStore — Personalized Book Collection Platform',
+    title: 'BookStore - Personalized Book Collection Platform',
     description:
       'BookStore provides a responsive web app and RESTful APIs for managing personal libraries.',
     problem:
@@ -109,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     id: 'passvault',
-    title: 'PassVault — Secure Password Storage Platform',
+    title: 'PassVault - Secure Password Storage Platform',
     description:
       'PassVault is a zero‑knowledge, client-encrypted password manager.',
     problem:
