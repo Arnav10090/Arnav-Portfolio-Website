@@ -90,7 +90,7 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                     <React.Fragment key="1">
                       I'm a{' '}
                       <span className="text-primary-500 font-medium highlight-term">
-                        Full Stack Engineer & AI Builder
+                        Backend Engineer & AI Builder
                       </span>{' '}
                       and final-year{' '}
                       <span className="text-primary-500 font-medium highlight-term">
@@ -117,14 +117,14 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                       <span className="text-primary-500 font-medium highlight-term">
                         Payatu Security
                       </span>
-                      , I shipped Next.js interfaces and optimized MySQL-backed
-                      APIs, cutting page load times from 3s &rarr; 1.5s (
-                      <span className="text-primary-500 font-medium highlight-term">
-                        50% faster
-                      </span>
-                      ) and improving backend response by{' '}
+                      , I optimized MySQL-backed
+                      APIs and built real-time logging systems, improving backend response by{' '}
                       <span className="text-primary-500 font-medium highlight-term">
                         40%
+                      </span>
+                      {' '}and handling{' '}
+                      <span className="text-primary-500 font-medium highlight-term">
+                        1,000+ events/minute
                       </span>
                       .
                     </React.Fragment>,
@@ -159,23 +159,23 @@ export function AboutSection({ className, id }: AboutSectionProps) {
                     <React.Fragment key="4">
                       I primarily work with{' '}
                       <span className="text-primary-500 font-medium highlight-term">
-                        React
-                      </span>
-                      ,{' '}
-                      <span className="text-primary-500 font-medium highlight-term">
-                        Next.js
-                      </span>
-                      ,{' '}
-                      <span className="text-primary-500 font-medium highlight-term">
                         Node.js
                       </span>
                       ,{' '}
                       <span className="text-primary-500 font-medium highlight-term">
-                        Django
+                        Python
                       </span>
                       ,{' '}
                       <span className="text-primary-500 font-medium highlight-term">
                         FastAPI
+                      </span>
+                      ,{' '}
+                      <span className="text-primary-500 font-medium highlight-term">
+                        TypeScript
+                      </span>
+                      ,{' '}
+                      <span className="text-primary-500 font-medium highlight-term">
+                        Express
                       </span>{' '}
                       and{' '}
                       <span className="text-primary-500 font-medium highlight-term">

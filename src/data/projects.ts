@@ -8,25 +8,26 @@ import type { Project } from '../lib/types';
 export const projects: Project[] = [
   {
     id: 'skillbridge-ai-onboarding',
-    title: 'SkillBridge - AI Adaptive Onboarding Engine',
+    title: 'SkillBridge – AI Adaptive Onboarding Engine',
     description:
-      'An AI-driven platform that compares resumes against job descriptions, identifies precise skill gaps, and generates personalized, dependency-aware learning roadmaps.',
+      'AI-powered onboarding platform that analyzes candidate resumes against job descriptions, identifies multidimensional skill gaps, and generates deterministic, prerequisite-aware personalized learning roadmaps.',
     problem:
-      'Traditional onboarding is one-size-fits-all, while manually mapping candidate skills to role requirements is slow, inconsistent, and weak at handling partial matches and prerequisite dependencies.',
+      'Traditional onboarding relies on manual assessments and keyword matching, making it difficult to accurately identify transferable skills, prerequisite dependencies, and personalized learning paths for candidates transitioning into new roles.',
     solution:
-      'Built a React + FastAPI system that ingests PDF/DOCX/TXT resumes and job descriptions, uses LLM-assisted skill extraction with alias-based fallback, performs 3-layer gap analysis using exact matching, skill-family mapping, and semantic similarity, and generates prioritized learning paths through a custom WGT scoring engine with interactive DAG visualization.',
+      "Architected a FastAPI backend implementing a 6-stage asynchronous processing pipeline with a 3-layer skill matching algorithm (Exact Match, Skill Family Mapping, and custom 384-dimensional semantic hashing). Designed a custom Weighted Graph Traversal (WGT) algorithm with Kahn's Topological Sort to generate deterministic prerequisite-aware learning pathways across a structured skill taxonomy.",
     outcome:
-      'Delivered an end-to-end product with async background analysis, live progress tracking, readiness scoring, reasoning traces, and curated learning recommendations. Grounded the engine in a 71-skill taxonomy, 43 prerequisite links, 58 curated modules, and data-driven weighting derived from 2,484 resumes and 2,277 job descriptions.',
+      'Processed 2,484 resumes and 2,277 job descriptions to enrich a 71-skill taxonomy, generating deterministic learning pathways across a curated 58-module catalog using 5 REST APIs and an interactive DAG visualization.',
     techStack: [
-      'React',
-      'Vite',
       'FastAPI',
+      'React',
       'Python',
       'SQLite',
-      'Sentence-Transformers',
-      'Ollama/OpenAI',
-      'React Flow',
       'Docker',
+      'Custom WGT Algorithm',
+      "Kahn's Topological Sort",
+      'Semantic Matching',
+      'React Flow',
+      'SQLAlchemy',
     ],
     featured: true,
     imageUrl: '/images/projects/skillbridge logo.png',
@@ -35,22 +36,26 @@ export const projects: Project[] = [
   },
   {
     id: 'autopilot-ai-project-planner',
-    title: 'Autopilot - AI Powered Project Planning Platform',
+    title: 'Autopilot – AI Powered Project Planning Platform',
     description:
-      'Autopilot converts high-level ideas into execution-ready project plans.',
+      'Multi-agent AI platform that transforms high-level software requirements into structured, execution-ready project plans using coordinated AI agents and backend orchestration.',
     problem:
-      'Project planning is time-consuming, inconsistent, and often misses hidden dependencies and risks, causing delays and scope creep.',
+      'Planning complex software projects manually requires significant effort to decompose requirements, select technologies, assess risks, and organize implementation tasks. Generic LLMs often produce inconsistent outputs that cannot be directly executed.',
     solution:
-      'Autopilot converts high-level ideas into execution-ready project plans. It ingests requirements (text, briefs, or user interviews), extracts objectives, and decomposes them into milestones, tasks, and deliverables. The platform builds a dependency graph, estimates effort and duration, and runs automated risk analysis to flag technical, resourcing, and timeline risks with mitigation suggestions. Multi-agent orchestration allows iterative refinement and stakeholder-facing exports (CSV, JSON, task manager integrations).',
+      'Engineered a backend orchestration platform coordinating 4 specialized AI agents through a unified Express.js REST API. Implemented structured JSON validation, PostgreSQL persistence, OAuth authentication, and sequential AI execution to automate requirement analysis, technology selection, task planning, and risk assessment.',
     outcome:
-      'Deliver clear, prioritized roadmaps and task lists that reduce planning time, improve predictability, and create actionable handoffs for engineering and PM teams.',
+      'Orchestrated 4 AI agents, engineered 16 REST APIs, generated structured execution plans containing 35–50 engineering tasks across 6 planning modules, and supported multi-format export to PDF, DOCX, CSV, JSON, and Markdown.',
     techStack: [
-      'Next.js frontend',
-      'TypeScript',
-      'Node/Express APIs',
+      'Next.js',
+      'Express.js',
+      'Node.js',
       'PostgreSQL',
-      'Groq/LLM orchestration',
-      'OAuth integrations',
+      'Groq API',
+      'OAuth 2.0',
+      'Passport.js',
+      'Ajv',
+      'Multi-Agent AI',
+      'Project Planning',
     ],
     featured: true,
     imageUrl: '/images/projects/autopilot-pic.webp',
@@ -59,22 +64,26 @@ export const projects: Project[] = [
   },
   {
     id: 'ai-content-generator',
-    title: 'ContentForge AI - AI Content Generation SaaS',
+    title: 'ContentForge AI – Production AI SaaS Platform',
     description:
-      'A secure, multi-tenant content generation service driven by LLMs with prompt templates, editorial controls, and generation pipelines.',
+      'Production-ready AI SaaS platform featuring authenticated content generation, subscription billing, persistent generation history, and specialized AI workflows powered by Llama 3.1.',
     problem:
-      'Creating consistent, high-volume content is slow, expensive, and difficult to scale while maintaining brand voice and quality.',
+      'Most AI content generation tools provide basic prompting but lack production SaaS capabilities such as authentication, billing, persistent storage, and centralized management of generated content.',
     solution:
-      'A secure, multi-tenant content generation service driven by LLMs with prompt templates, editorial controls, and generation pipelines. Users create templates for article types, product descriptions, or social posts; the system fills templates with structured inputs, applies brand/style constraints, and runs automated quality checks (readability, SEO, profanity/consistency filters). Editorial review workflows, versioning, and scheduled publishing make the output production-ready. Analytics track content performance to iteratively improve prompts and templates.',
+      'Architected a scalable serverless Next.js application using Neon PostgreSQL and Drizzle ORM with secure Clerk authentication, Groq-powered AI generation, Server Actions, and Razorpay subscription billing. Engineered reusable prompt pipelines supporting 18 specialized AI templates with persistent history and credit-based usage management.',
     outcome:
-      'Up to 70% faster content production, consistent brand voice across channels, and the ability to scale to thousands of monthly generations with governance and analytics.',
+      'Built 18 AI generation templates, engineered 7 REST API endpoints, designed relational PostgreSQL persistence for subscriptions and generation history, and implemented a dynamic credit allocation system supporting 10,000 initial credits per user.',
     techStack: [
-      'Next.js/React frontend',
+      'Next.js',
       'TypeScript',
-      'serverless LLM calls',
-      'secure API keys/subscriptions',
-      'scheduler',
-      'CMS/analytics integrations',
+      'PostgreSQL',
+      'Drizzle ORM',
+      'Neon',
+      'Clerk',
+      'Razorpay',
+      'Groq API',
+      'Server Actions',
+      'AI SaaS',
     ],
     featured: true,
     imageUrl: '/images/projects/ai-content-pic.webp',
@@ -83,22 +92,25 @@ export const projects: Project[] = [
   },
   {
     id: 'book-store-platform',
-    title: 'BookStore - Personalized Book Collection Platform',
+    title: 'BookStore Management Platform',
     description:
-      'BookStore provides a responsive web app and RESTful APIs for managing personal libraries.',
+      'Production-ready MERN application for secure book inventory management featuring stateless authentication, automated asset handling, and a decoupled frontend-backend architecture.',
     problem:
-      'Readers lack a simple, private, and flexible tool to catalog, organize, and discover books with rich metadata and cross-device sync.',
+      'Managing digital book inventories requires secure authentication, scalable media handling, and synchronized application state. Traditional tightly coupled architectures complicate independent deployment, while unmanaged file uploads often lead to orphaned assets and inconsistent data.',
     solution:
-      'BookStore provides a responsive web app and RESTful APIs for managing personal libraries: add/import books, organize shelves and tags, rate and review, and discover recommendations. JWT-based auth secures accounts; backend enriches metadata (covers, descriptions, author info) and supports search/filtering and CSV/JSON import-export. Optional social features allow sharing curated lists while keeping private data protected.',
+      'Engineered a decoupled MERN architecture using React and Express, implementing a RESTful MVC backend, stateless JWT authentication with bcrypt password hashing, and automated token management through Axios interceptors. Designed a multipart file processing pipeline with Multer and custom file lifecycle management to automatically remove orphaned assets while maintaining synchronized global state using React Context.',
     outcome:
-      'A polished experience for building and maintaining personal libraries, discovering new reads, and keeping collections portable and private.',
+      'Built 8 REST API endpoints, designed 3 MongoDB schemas, developed 17 modular React components, and implemented an automated authentication pipeline with 12-round bcrypt hashing and stateless JWT authorization.',
     techStack: [
-      'React',
-      'Vite',
       'Node.js',
       'Express.js',
+      'React',
       'MongoDB',
       'JWT',
+      'Mongoose',
+      'Multer',
+      'Axios',
+      'React Context',
       'Tailwind CSS',
     ],
     featured: false,
@@ -109,20 +121,26 @@ export const projects: Project[] = [
   },
   {
     id: 'passvault',
-    title: 'PassVault - Secure Password Storage Platform',
+    title: 'PassVault',
     description:
-      'PassVault is a zero‑knowledge, client-encrypted password manager.',
+      'Zero-knowledge password manager built with the MERN stack, implementing client-side AES-256 encryption, secure authentication, and privacy-first credential storage.',
     problem:
-      'Managing many credentials securely is difficult; many solutions trade off usability or keep servers capable of decrypting user data.',
+      'Managing credentials across multiple platforms increases security risks, while many password managers require users to trust centralized services with sensitive information. A secure solution should ensure encrypted storage without exposing plaintext credentials to the server.',
     solution:
-      'PassVault is a zero‑knowledge, client-encrypted password manager. All encryption and key derivation happen client-side; the server stores only encrypted blobs and metadata. Features include secure sync across devices, encrypted backups, password generation, strength scoring, secure sharing with ephemeral access, MFA support, and audit logs. Recovery flows are designed to preserve zero-knowledge guarantees (recoverable keys via user-held hints or hardware tokens).',
+      'Architected a secure MERN application implementing a zero-knowledge encryption pipeline using AES-256 encryption before database persistence. Built stateless JWT authentication with bcrypt password hashing, secured REST APIs using Helmet and express-validator, and implemented protected routing with React Context for secure session management.',
     outcome:
-      'Military-grade security with simple daily usability—secure cross-device sync, safe sharing, and enterprise-ready auditability without exposing plaintext credentials to the server.',
+      'Engineered 8 REST API endpoints, designed 2 MongoDB schemas, developed 13 reusable React components, and implemented end-to-end AES-256 encryption with stateless JWT authentication for secure credential management.',
     techStack: [
-      'React UI',
-      'Node backend for encrypted storage & sync',
-      'end-to-end encryption libraries',
-      'WebCrypto/hardware token support',
+      'React',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT',
+      'CryptoJS',
+      'Helmet',
+      'Express Validator',
+      'Framer Motion',
+      'React Context',
     ],
     featured: true,
     imageUrl: '/images/projects/passvault-pic.webp',

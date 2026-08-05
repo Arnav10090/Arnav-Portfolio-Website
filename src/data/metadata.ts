@@ -7,31 +7,29 @@ import type { SEOMetadata } from '../lib/types';
 
 export const siteMetadata: SEOMetadata = {
   title:
-    'Arnav Tiwari – Software Engineer | AI Products & Automation Systems',
+    'Arnav Tiwari – Backend-focused Software Engineer | Production AI Systems',
   description:
-    'Software Engineer specializing in building AI-powered products, automation workflows, and scalable web applications. Proven track record of reducing hazardous incidents and accelerating document processing through practical engineering and product-focused thinking.',
+    'Backend-focused Software Engineer specializing in building production AI systems, scalable architectures, and automation workflows.',
   keywords: [
     'Arnav Tiwari',
+    'Backend Engineer',
     'Software Engineer',
-    'AI Automation',
-    'Product Engineering',
-    'Generative AI',
+    'AI Engineering',
+    'Production AI Systems',
     'Workflow Automation',
-    'Full Stack Engineer',
-    'Next.js Developer',
-    'React Developer',
     'Node.js',
-    'AI Systems',
+    'FastAPI',
     'LLM Engineering',
     'Multi-Agent Systems',
     'TypeScript',
+    'System Architecture',
     'System Design',
     'IIIT Nagpur',
   ],
   ogTitle:
-    'Arnav Tiwari – Software Engineer Building AI Products & Automation Systems',
+    'Arnav Tiwari – Backend-focused Software Engineer Building Production AI Systems',
   ogDescription:
-    'Software Engineer and SDE Intern at Hitachi India focused on building AI-powered products, automation workflows, and scalable web applications.',
+    'Backend-focused Software Engineer building production AI systems, scalable backend architectures, and enterprise automation workflows.',
   ogImage: '/images/og-image.jpg',
   canonicalUrl: 'https://arnavtiwari.dev',
 };
@@ -46,7 +44,7 @@ export const personSchema = {
   name: 'Arnav Tiwari',
   url: 'https://arnavtiwari.dev',
   image: 'https://arnavtiwari.dev/images/og-image.jpg',
-  jobTitle: 'Software Engineer',
+  jobTitle: 'Backend-focused Software Engineer',
   worksFor: {
     '@type': 'Organization',
     name: 'Hitachi',
@@ -58,19 +56,19 @@ export const personSchema = {
     url: 'https://iiitn.ac.in',
   },
   knowsAbout: [
-    'React',
-    'Next.js',
+    'FastAPI',
     'Node.js',
     'TypeScript',
-    'AI Systems',
-    'LLM Engineering',
+    'AI Systems Engineering',
+    'LLM Orchestration',
     'Multi-Agent Systems',
+    'Vector Databases',
     'FAISS',
     'scikit-learn',
     'spaCy',
     'PostgreSQL',
-    'Full Stack Development',
-    'System Design',
+    'Backend Development',
+    'System Architecture',
   ],
   sameAs: [
     'https://linkedin.com/in/arnavtiwari',
@@ -86,10 +84,10 @@ export const personSchema = {
 
 export const personalInfo = {
   name: 'Arnav Tiwari',
-  role: 'Software Engineer Building AI Products and Automation Systems',
-  status: 'I build scalable software, AI-powered workflows, and automation systems that solve real operational problems.',
+  role: 'Backend-focused Software Engineer building production AI systems',
+  status: 'I engineer robust backend architectures, multi-agent AI systems, and production-grade automation workflows.',
   description:
-    'Software Engineer and SDE Intern at Hitachi India focused on building AI-powered products, automation workflows, and scalable web applications. My work has reduced hazardous incidents by 54%, accelerated document processing by 80%, and improved operational efficiency through workflow automation and real-time monitoring systems. I enjoy solving complex business problems through practical engineering, AI systems, and product-focused thinking.',
+    'Backend-focused Software Engineer at Hitachi India building production AI systems, scalable backend architectures, and industrial automation pipelines. My work involves orchestrating complex multi-agent LLM systems, engineering custom vector search algorithms, and developing robust REST APIs. I specialize in backend engineering, systems architecture, and delivering high-performance software that solves real operational problems.',
   location: 'Nagpur, India',
   university: 'Indian Institute of Information Technology Nagpur',
   degree: 'B.Tech in Computer Science Engineering',

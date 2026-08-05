@@ -16,10 +16,10 @@ export const experiences: Experience[] = [
     description:
       'Worked on industrial-grade software systems for power and manufacturing domains.',
     achievements: [
-      'Engineered SLD visualization modules for steel plant electrical layouts, enabling real-time anomaly detection of motors — contributing to a 33% reduction in motor failures and 54% reduction in hazardous incidents.',
-      'Ported Hitachi applications to IntervalZero RTX64 RTOS, eliminating Windows OS dependency and enabling deterministic scheduling — improving system efficiency by 43% and reducing task allocation time by 76%.',
-      'Built React + Django interfaces for 5 HICADS systems (DPS, RCTMS, PTMS, TTMS, ICQIS), digitalizing manual equipment pipelines and reducing operator time by 57%.',
-      'Automated CRS document generation pipeline using n8n, cutting turnaround from 2 weeks to 2 days (80% faster) — enabling delivery of 7-10 project documents weekly that previously took a month.',
+      'Designed and built an AI-powered Technical Specification generation platform with 30+ configurable document sections, retrieving contextual engineering knowledge and generating standardized industrial documentation.',
+      'Engineered Single Line Diagram (SLD) visualization modules enabling real-time monitoring of motors and critical electrical equipment, contributing to plant-wide operational improvements.',
+      'Built and deployed five React + Django web applications digitizing electrical and steel equipment analysis workflows, replacing manual spreadsheet-driven processes and improving workflow efficiency by 43%.',
+      'Designed and automated a CRS document generation pipeline using n8n, reducing document turnaround from two weeks to two days while enabling delivery of 7–10 project documents every week.',
     ],
     techStack: ['C++', 'Real-Time Systems', 'Industrial Software', 'Agile'],
     logo: '/images/companies/hitachi-logo.png', // Placeholder
@@ -35,10 +35,9 @@ export const experiences: Experience[] = [
     description:
       'Built and optimized full-stack applications for security analytics platforms.',
     achievements: [
-      'Built responsive Next.js + SCSS interfaces, reducing page load time from 3s → 1.5s (50% faster) and improving UI maintainability.',
-      'Developed 15 REST API endpoints and optimized 8 via indexing, query optimization, and caching on a MySQL-backed Node.js backend — improving response time by 40%.',
-      'Built a real-time logger handling 1,000+ log events/minute for a 4-role RBAC WiFi admin dashboard managing 1,000+ users.',
-      'Contributed to production-level code with 90% test coverage, following agile development practices.',
+      'Developed 15 REST APIs and optimized 8 backend endpoints using indexing, query optimization, and caching, improving API response time by 40%.',
+      'Built a real-time logging system processing 1,000+ events per minute with RBAC-based audit tracking for a WiFi administration platform managing over 1,000 users.',
+      'Developed responsive Next.js + SCSS interfaces, reducing page load time from 3 seconds to 1.5 seconds while improving maintainability.',
     ],
     techStack: ['Next.js', 'Node.js', 'MySQL', 'REST APIs', 'SCSS'],
     logo: '/images/companies/payatu-logo.png', // Placeholder
