@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Button } from '@/components/ui/Button';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { navigationItems, resumeDownload, socialLinks } from '@/data/contact';
 import { trackResumeDownload, trackExternalLink } from '@/lib/analytics';
@@ -59,44 +57,46 @@ export function Header() {
   useEffect(() => {
     const sectionIds = navigationItems.map(item => item.href.replace('#', ''));
     let frameId = 0;
+    const activationOffset = 120;
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '-100px 0px -66% 0px', // Trigger when section is near top of viewport
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      // Find the most visible section
-      const visibleEntries = entries.filter(entry => entry.isIntersecting);
-
-      if (visibleEntries.length > 0) {
-        // Sort by intersection ratio and position
-        const mostVisible = visibleEntries.reduce((prev, current) => {
-          return current.intersectionRatio > prev.intersectionRatio
-            ? current
-            : prev;
-        });
-
-        const nextActiveSection = `#${mostVisible.target.id}`;
-        if (activeSectionRef.current !== nextActiveSection) {
-          activeSectionRef.current = nextActiveSection;
-          setActiveSection(nextActiveSection);
+    const updateActiveSection = () => {
+      if (window.scrollY < 100) {
+        if (activeSectionRef.current !== '') {
+          activeSectionRef.current = '';
+          setActiveSection('');
         }
+        return;
+      }
+
+      const sections = sectionIds
+        .map(id => document.getElementById(id))
+        .filter((element): element is HTMLElement => element !== null);
+
+      if (sections.length === 0) {
+        return;
+      }
+
+      let nextActiveSection = `#${sections[0].id}`;
+
+      sections.forEach(section => {
+        const { top } = section.getBoundingClientRect();
+        if (top <= activationOffset) {
+          nextActiveSection = `#${section.id}`;
+        }
+      });
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        nextActiveSection = `#${sections[sections.length - 1].id}`;
+      }
+
+      if (activeSectionRef.current !== nextActiveSection) {
+        activeSectionRef.current = nextActiveSection;
+        setActiveSection(nextActiveSection);
       }
     };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-
-    sectionIds.forEach(id => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
 
     const handleScroll = () => {
       if (frameId) return;
@@ -109,11 +109,7 @@ export function Header() {
           isScrolledRef.current = nextIsScrolled;
           setIsScrolled(nextIsScrolled);
         }
-
-        if (window.scrollY < 100 && activeSectionRef.current !== '') {
-          activeSectionRef.current = '';
-          setActiveSection('');
-        }
+        updateActiveSection();
       });
     };
 
@@ -125,13 +121,13 @@ export function Header() {
       handleScroll();
     };
 
+    updateActiveSection();
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize, { passive: true });
     handleScroll(); // Initial check
 
     return () => {
-      observer.disconnect();
       if (frameId) {
         window.cancelAnimationFrame(frameId);
       }
@@ -146,6 +142,7 @@ export function Header() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         setIsMenuOpen(false);
+        activeSectionRef.current = href;
         setActiveSection(href);
       }
     }

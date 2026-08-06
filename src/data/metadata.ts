@@ -84,10 +84,10 @@ export const personSchema = {
 
 export const personalInfo = {
   name: 'Arnav Tiwari',
-  role: 'Backend-focused Software Engineer building production AI systems',
-  status: 'I engineer robust backend architectures, multi-agent AI systems, and production-grade automation workflows.',
+  role: 'Software Engineer building AI-powered Full-Stack Systems',
+  status: 'I build AI-powered full-stack applications, scalable backend systems, and production-ready software that transforms complex ideas into reliable products.',
   description:
-    'Backend-focused Software Engineer at Hitachi India building production AI systems, scalable backend architectures, and industrial automation pipelines. My work involves orchestrating complex multi-agent LLM systems, engineering custom vector search algorithms, and developing robust REST APIs. I specialize in backend engineering, systems architecture, and delivering high-performance software that solves real operational problems.',
+    "I'm a Software Engineer passionate about building AI-powered applications that solve real engineering problems. My experience spans full-stack development, backend architecture, and intelligent software systems.\n\nAt Hitachi India Pvt. Ltd., I contributed to industrial software by developing React and Django applications, AI-assisted engineering tools, and workflow automation solutions. Beyond industry, I've built production-ready AI platforms—including multi-agent systems, adaptive onboarding engines, and SaaS applications—taking products from architecture to deployment with a strong focus on scalability, reliability, and user experience.",
   location: 'Nagpur, India',
   university: 'Indian Institute of Information Technology Nagpur',
   degree: 'B.Tech in Computer Science Engineering',
