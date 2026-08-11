@@ -7,9 +7,9 @@ import type { SEOMetadata } from '../lib/types';
 
 export const siteMetadata: SEOMetadata = {
   title:
-    'Arnav Tiwari – Backend-focused Software Engineer | Production AI Systems',
+    'Arnav Tiwari – Full Stack Software Engineer | Production AI Systems',
   description:
-    'Backend-focused Software Engineer specializing in building production AI systems, scalable architectures, and automation workflows.',
+    'Full Stack Software Engineer specializing in building production AI systems, scalable architectures, and automation workflows.',
   keywords: [
     'Arnav Tiwari',
     'Backend Engineer',
@@ -27,9 +27,9 @@ export const siteMetadata: SEOMetadata = {
     'IIIT Nagpur',
   ],
   ogTitle:
-    'Arnav Tiwari – Backend-focused Software Engineer Building Production AI Systems',
+    'Arnav Tiwari – Full Stack Software Engineer Building Production AI Systems',
   ogDescription:
-    'Backend-focused Software Engineer building production AI systems, scalable backend architectures, and enterprise automation workflows.',
+    'Full Stack Software Engineer building production AI systems, scalable backend architectures, and enterprise automation workflows.',
   ogImage: '/images/og-image.jpg',
   canonicalUrl: 'https://arnavtiwari.dev',
 };
@@ -44,7 +44,7 @@ export const personSchema = {
   name: 'Arnav Tiwari',
   url: 'https://arnavtiwari.dev',
   image: 'https://arnavtiwari.dev/images/og-image.jpg',
-  jobTitle: 'Backend-focused Software Engineer',
+  jobTitle: 'Full Stack Software Engineer',
   worksFor: {
     '@type': 'Organization',
     name: 'Hitachi',
